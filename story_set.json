@@ -1,0 +1,35 @@
+{
+  "photo_style": "Photorealistic hard-science Mars mission documentation. The subject is always one unmanned robotic rover; no astronauts, humans, humanoids, creatures, drivers, or passengers. Authentic planetary expedition photography with natural Martian illumination, physically plausible shadows, restrained colors, fine atmospheric dust, realistic optics and exposure, subtle sensor texture, and realistic Mars geology. No logos, readable text, existing fictional characters, or national emblems.",
+  "vehicles": [
+    {
+      "slug": "vehicle-01-atlas",
+      "name": "ATLAS-01",
+      "identity": "ATLAS-01 is an original unmanned American aerospace-inspired Mars science rover, not a real NASA vehicle and not a car. Its unmistakable silhouette is a broad, low, rectangular white ceramic chassis with a wide flat black solar deck spanning the entire roof, two slim deep-blue side rails, and a tall rectangular stereo-camera mast exactly centered on the roof. It has exactly six large identical airless woven metallic-mesh wheels: three on each side at front, middle, and rear stations, all connected by clearly visible long rocker-bogie linkages. A precise folded front-right instrument arm and a compact rear dish antenna complete the clean, optimistic engineering design. No flags, seals, logos, or readable text.",
+      "scenes": [
+        ["01-hello-world", "HELLO WORLD AFTER LANDING: ATLAS-01 has just reached a broad, undisturbed landing plain. Its fresh wheel tracks begin at the lander in the far background. The rover faces a low sunrise over a quiet basalt horizon, communicating a first successful message from Mars."],
+        ["02-rock-investigation", "ROCK INVESTIGATION: ATLAS-01 is stopped beside a layered dark basalt boulder. Its robotic arm is extended toward a freshly brushed rock surface while its mast cameras observe. Close documentary composition with the rover, arm, and geologic target clearly visible."],
+        ["03-three-years-later", "THREE YEARS LATER: ATLAS-01 continues across a wind-scoured plain after three years on Mars. Fine ochre dust coats panel edges and mesh wheels, paint is subtly worn, and the suspension shows accumulated grime, but the rover remains functional and scientifically plausible."]
+      ]
+    },
+    {
+      "slug": "vehicle-02-taiga",
+      "name": "TAIGA-02",
+      "identity": "TAIGA-02 is an original unmanned Russian engineering-inspired Mars exploration rover, not a real Roscosmos vehicle and not a car. Its unmistakable silhouette is a short, tall, wedge-shaped armored chassis with a raised central dark-green cylindrical instrument housing, one large pale-gray vertical radiator fin on the rear-left, and a very short protected periscope camera mast mounted forward. It has exactly six identical airless woven metallic-mesh wheels: three on each side at front, middle, and rear stations, on rugged high-clearance rocker-bogie suspension. A heavy box-section sampling crane projects from the left-front corner, while rust-orange maintenance panels break up the pale-gray armor. Functional, robust, severe cold-weather engineering character. No flags, emblems, logos, Cyrillic text, or readable text.",
+      "scenes": [
+        ["01-hello-world", "HELLO WORLD AFTER LANDING: TAIGA-02 has just completed its first drive away from a compact landing platform on a flat red plain. Fresh tracks cross pristine dust toward the rover. Early morning light and a simple horizon make the moment feel like a first message home."],
+        ["02-rock-investigation", "ROCK INVESTIGATION: TAIGA-02 studies a fractured iron-rich outcrop. Its sturdy sampling arm hovers over a freshly exposed mineral vein while the mast looks down. Documentary geology photograph; show the rover, arm, and rock interaction clearly."],
+        ["03-three-years-later", "THREE YEARS LATER: TAIGA-02 works through a shallow valley after three Martian years. Dust is embedded in joints and wheel mesh, orange accents are faded and chipped, and the panels show realistic abrasion, while the rover remains intact and operational."]
+      ]
+    },
+    {
+      "slug": "vehicle-03-vanguard",
+      "name": "VANGUARD-03",
+      "identity": "VANGUARD-03 is an original unmanned superhero-comic-inspired Mars science rover, with no existing character, franchise logo, or costume elements. Its unmistakable silhouette is a low arrowhead-shaped chassis that narrows to a pointed forward science bay, with two raised cobalt side shoulders framing a central crimson hexagonal camera pod, a sharply faceted dark roof deck, and three small warm-gold circular instrument housings on each shoulder. It has exactly six identical airless woven metallic-mesh wheels: three on each side at front, middle, and rear stations, on genuine articulated rocker-bogie suspension. A slim folded robotic arm is stowed beneath the pointed nose and a pair of small rear antenna fins create a confident but credible profile. It remains hard-science mission hardware, not a toy, car, or fantasy vehicle. No logos, emblems, readable text, or character likenesses.",
+      "scenes": [
+        ["01-hello-world", "HELLO WORLD AFTER LANDING: VANGUARD-03 stands on its first quiet Martian plain moments after landing. Fresh tracks lead from a distant descent stage, the low sun catches crimson and cobalt panels, and the composition feels optimistic and cinematic while remaining authentic mission documentation."],
+        ["02-rock-investigation", "ROCK INVESTIGATION: VANGUARD-03 examines a strange layered rock at the foot of a low ridge. Its robotic arm points a compact science instrument at the rock face; mast cameras and six-wheel stance are clear. Bold but realistic expedition documentary framing."],
+        ["03-three-years-later", "THREE YEARS LATER: VANGUARD-03 travels through a dusty crater floor after three Martian years. Fine dust mutes the crimson, cobalt, and gold accents; wheel mesh and joints carry realistic wear, while the rover remains reliable, capable, and unmistakably the same vehicle."]
+      ]
+    }
+  ]
+}
