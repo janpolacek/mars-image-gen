@@ -1,0 +1,516 @@
+{
+  "prompt": [
+    13,
+    "89c9c022-3a30-42b4-9bf0-b65b52e247ea",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux-2-klein-base-4b.safetensors",
+          "weight_dtype": "default"
+        },
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen_3_4b.safetensors",
+          "type": "flux2",
+          "device": "cpu"
+        },
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        },
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "4": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "TAIGA-02: roughly two-metre-long unmanned Russian planetary-exploration-inspired Mars rover. Squat cylindrical brushed-silver instrument housing with a closed flat top on a rectangular dark olive-green chassis. Four broad solid-metal wheels, two per side, with raised chevron ribs and dark hubs. Each wheel connects visibly to a sturdy short suspension arm. A short camera post sits at the FRONT edge of the circular housing with one dark lens block. One robust two-joint drilling arm mounts at the FRONT centre of the chassis, ending in a short cylindrical drill head, folded against the front for travel. Rear is a plain olive service panel. Restrained housing seams, recessed fasteners, matte green paint and enclosed dark joints. Scientific field instrument, no weaponry, cabin or ornamental antennas."
+        },
+        "_meta": {
+          "title": "Vehicle description"
+        }
+      },
+      "5": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nFirst survey after touchdown near an eroded basin. TAIGA fully visible from front-right on flat gravel beside shallow wind-shaped ridges. Its squat descent platform is small in the distance, a short pair of ribbed-wheel tracks leading toward the rover. Early sunlight reflects softly across the circular silver housing; green chassis and four ribbed wheels remain readable in open shadow. A little landing dust rests on the lower chassis, otherwise new surfaces. Drill folded, camera upright. Layered outcrops beyond the plain, no fog or excessive exhaust haze."
+        },
+        "_meta": {
+          "title": "Scene description"
+        }
+      },
+      "6": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nBarren Martian terrain: fine rusty ochre dust, dark basalt fragments, weathered layered outcrops, dry gravel and a distant eroded horizon under a muted dusty peach sky. No plants, cities, open water or people. Believable terrain scale and distant atmospheric haze.\n\nDocumentary photograph taken by a nearby robotic survey camera, ordinary 40mm-equivalent field of view at vehicle-body height. Available sunlight and sky fill, plausible directional shadows, restrained exposure, no studio lighting or theatrical rim light. Granular soil, irregular stones and fine dust in panel recesses, without excessive sharpening. Terrain occupies part of the frame to establish scale. Replace the white reference background entirely with the outdoor environment and relight the vehicle to match, not a pasted studio cutout."
+        },
+        "_meta": {
+          "title": "Shared realism and photography"
+        }
+      },
+      "7": {
+        "class_type": "StringConcatenate",
+        "inputs": {
+          "string_a": [
+            "5",
+            0
+          ],
+          "string_b": [
+            "4",
+            0
+          ],
+          "delimiter": "\n\n"
+        },
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "8": {
+        "class_type": "StringConcatenate",
+        "inputs": {
+          "string_a": [
+            "7",
+            0
+          ],
+          "string_b": [
+            "6",
+            0
+          ],
+          "delimiter": "\n\n"
+        },
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "9": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": [
+            "8",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "10": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Empty negative prompt (Base CFG)"
+        }
+      },
+      "11": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "mars-ai-stories/stories/vehicle-02-taiga/references/front-left.png"
+        },
+        "_meta": {
+          "title": "Reference: mars-ai-stories/stories/vehicle-02-taiga/references/front-left.png"
+        }
+      },
+      "12": {
+        "class_type": "ImageScaleToTotalPixels",
+        "inputs": {
+          "image": [
+            "11",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "megapixels": 0.6,
+          "resolution_steps": 1
+        },
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "13": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "12",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "14": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "9",
+            0
+          ],
+          "latent": [
+            "13",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "15": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "10",
+            0
+          ],
+          "latent": [
+            "13",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "16": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "mars-ai-stories/stories/vehicle-02-taiga/references/side.png"
+        },
+        "_meta": {
+          "title": "Reference: mars-ai-stories/stories/vehicle-02-taiga/references/side.png"
+        }
+      },
+      "17": {
+        "class_type": "ImageScaleToTotalPixels",
+        "inputs": {
+          "image": [
+            "16",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "megapixels": 0.6,
+          "resolution_steps": 1
+        },
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "18": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "17",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "19": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "14",
+            0
+          ],
+          "latent": [
+            "18",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "20": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "15",
+            0
+          ],
+          "latent": [
+            "18",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "21": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "mars-ai-stories/stories/vehicle-02-taiga/references/rear-right.png"
+        },
+        "_meta": {
+          "title": "Reference: mars-ai-stories/stories/vehicle-02-taiga/references/rear-right.png"
+        }
+      },
+      "22": {
+        "class_type": "ImageScaleToTotalPixels",
+        "inputs": {
+          "image": [
+            "21",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "megapixels": 0.6,
+          "resolution_steps": 1
+        },
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "23": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "22",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "24": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "19",
+            0
+          ],
+          "latent": [
+            "23",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "25": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "20",
+            0
+          ],
+          "latent": [
+            "23",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "26": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 1344,
+          "height": 768,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "EmptyFlux2LatentImage"
+        }
+      },
+      "27": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 410101
+        },
+        "_meta": {
+          "title": "RandomNoise"
+        }
+      },
+      "28": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "24",
+            0
+          ],
+          "negative": [
+            "25",
+            0
+          ],
+          "cfg": 5.0
+        },
+        "_meta": {
+          "title": "CFGGuider"
+        }
+      },
+      "29": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        },
+        "_meta": {
+          "title": "KSamplerSelect"
+        }
+      },
+      "30": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 20,
+          "width": 1344,
+          "height": 768
+        },
+        "_meta": {
+          "title": "Flux2Scheduler"
+        }
+      },
+      "31": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "27",
+            0
+          ],
+          "guider": [
+            "28",
+            0
+          ],
+          "sampler": [
+            "29",
+            0
+          ],
+          "sigmas": [
+            "30",
+            0
+          ],
+          "latent_image": [
+            "26",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "SamplerCustomAdvanced"
+        }
+      },
+      "32": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "31",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "33": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "32",
+            0
+          ],
+          "filename_prefix": "mars-ai-stories/stories/vehicle-02-taiga/scenes/01-hello-world"
+        },
+        "_meta": {
+          "title": "SaveImage"
+        }
+      }
+    },
+    {
+      "client_id": "05c551e9-b7c7-49d3-93ef-f9573be921ee",
+      "create_time": 1789411045828
+    },
+    [
+      "33"
+    ]
+  ],
+  "outputs": {
+    "33": {
+      "images": [
+        {
+          "filename": "01-hello-world_00001_.png",
+          "subfolder": "mars-ai-stories/stories/vehicle-02-taiga/scenes",
+          "type": "output"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "89c9c022-3a30-42b4-9bf0-b65b52e247ea",
+          "timestamp": 1789411047871
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "89c9c022-3a30-42b4-9bf0-b65b52e247ea",
+          "timestamp": 1789411047879
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "89c9c022-3a30-42b4-9bf0-b65b52e247ea",
+          "timestamp": 1789411220766
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "33": {
+      "node_id": "33",
+      "display_node": "33",
+      "parent_node": null,
+      "real_node_id": "33"
+    }
+  }
+}

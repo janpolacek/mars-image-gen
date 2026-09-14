@@ -32,7 +32,7 @@
   "4": {
     "class_type": "PrimitiveStringMultiline",
     "inputs": {
-      "value": "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent."
+      "value": "VANGUARD-03: unmanned Marvel-inspired exploration probe about two metres across, tangible scientific machine rather than superhero costume. Low hexagonal deep-crimson body, flat graphite deck, satin-gold inset side panels. NO wheels. Three identical downward pulse-thruster housings form a balanced triangle firmly integrated beneath the body; fictional pulse lift enables low hover. Three short hinged landing legs attach around the lower rim with broad footpads clear of the outlets. One short central camera mast carries a dark lens block. One compact two-joint sampling arm attaches to a distinct FRONT panel, folded against it for travel; opposite rear panel plain. Matte red paint, dark heat-resistant nozzle rims, lightly brushed gold panels and tidy recessed fasteners. No cockpit, floating components, giant energy core or weapons."
     },
     "_meta": {
       "title": "Vehicle description"
@@ -41,7 +41,7 @@
   "5": {
     "class_type": "PrimitiveStringMultiline",
     "inputs": {
-      "value": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nFirst morning after landing. Front-left view of the entire ATLAS on a broad rust-coloured plain. A small landing platform and short ramp sit in the middle distance behind it, connected by two bands of fresh wheel tracks. Low sunlight from frame left catches mesh wheel edges and casts a long grounded shadow to the right. Freshly deployed body with only a scattering of grit on lower panels and wheel contact patches. Camera upright, sampling arm folded. Fine foreground pebbles and a low dark ridge on the horizon. Quiet operational survey photograph, not a promotional hero shot."
+      "value": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nImmediately after arrival at a shallow crater, VANGUARD hovers half a metre above the ground in full front-left view. Landing legs folded clear of outlets, arm folded. Only restrained pale glow inside dark thruster rims, no long flames. Low irregular dust veil spreads close to the surface; a separate shadow falls below and slightly right of the probe. New crimson and satin-gold panels carry a few dust grains. Small carrier platform distant near crater rim. Early side sunlight, textured stony foreground, empty dusty sky. No wheel tracks or superhero effects."
     },
     "_meta": {
       "title": "Scene description"
@@ -122,10 +122,10 @@
   "11": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png"
+      "image": "mars-ai-stories/stories/vehicle-03-vanguard/references/front-left.png"
     },
     "_meta": {
-      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png"
+      "title": "Reference: mars-ai-stories/stories/vehicle-03-vanguard/references/front-left.png"
     }
   },
   "12": {
@@ -194,10 +194,10 @@
   "16": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/side.png"
+      "image": "mars-ai-stories/stories/vehicle-03-vanguard/references/side.png"
     },
     "_meta": {
-      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/side.png"
+      "title": "Reference: mars-ai-stories/stories/vehicle-03-vanguard/references/side.png"
     }
   },
   "17": {
@@ -266,10 +266,10 @@
   "21": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png"
+      "image": "mars-ai-stories/stories/vehicle-03-vanguard/references/rear-right.png"
     },
     "_meta": {
-      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png"
+      "title": "Reference: mars-ai-stories/stories/vehicle-03-vanguard/references/rear-right.png"
     }
   },
   "22": {
@@ -447,7 +447,7 @@
         "32",
         0
       ],
-      "filename_prefix": "mars-ai-stories/manual/02-scene"
+      "filename_prefix": "mars-ai-stories/stories/vehicle-03-vanguard/scenes/01-hello-world"
     },
     "_meta": {
       "title": "SaveImage"

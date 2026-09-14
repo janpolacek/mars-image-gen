@@ -49,7 +49,7 @@
         "Node name for S&R": "UNETLoader"
       },
       "widgets_values": [
-        "flux-2-klein-base-9b-fp8.safetensors",
+        "flux-2-klein-base-4b.safetensors",
         "default"
       ]
     },
@@ -108,7 +108,7 @@
         "Node name for S&R": "CLIPLoader"
       },
       "widgets_values": [
-        "qwen_3_8b_fp8mixed.safetensors",
+        "qwen_3_4b.safetensors",
         "flux2",
         "cpu"
       ]

@@ -1,0 +1,21 @@
+{
+  "vehicle": "TAIGA-02: roughly two-metre-long unmanned Russian planetary-exploration-inspired Mars rover. Squat cylindrical brushed-silver instrument housing with a closed flat top on a rectangular dark olive-green chassis. Four broad solid-metal wheels, two per side, with raised chevron ribs and dark hubs. Each wheel connects visibly to a sturdy short suspension arm. A short camera post sits at the FRONT edge of the circular housing with one dark lens block. One robust two-joint drilling arm mounts at the FRONT centre of the chassis, ending in a short cylindrical drill head, folded against the front for travel. Rear is a plain olive service panel. Restrained housing seams, recessed fasteners, matte green paint and enclosed dark joints. Scientific field instrument, no weaponry, cabin or ornamental antennas.",
+  "instruction": "<sks> back-right quarter view eye-level shot medium shot",
+  "style": "",
+  "references": [
+    "mars-ai-stories/stories/vehicle-02-taiga/references/canonical.png"
+  ],
+  "reference_sha256": {
+    "mars-ai-stories/stories/vehicle-02-taiga/references/canonical.png": "539f65cc8b351d58a7ac7823d9e4cf5f462978ae25153cb65f2a0d4022bd84e8"
+  },
+  "model_family": "qwen",
+  "planet_id": "mars",
+  "mission": {
+    "id": "taiga-strata",
+    "name": "Deep Strata Expedition",
+    "origin": "Russian planetary-engineering-inspired fictional expedition",
+    "purpose": "Inspect exposed sedimentary layers and collect shallow drill samples.",
+    "arrival": "A squat descent platform delivers the rover near an eroded basin rim."
+  },
+  "stage": "angle"
+}

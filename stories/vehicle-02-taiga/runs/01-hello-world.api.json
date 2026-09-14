@@ -32,7 +32,7 @@
   "4": {
     "class_type": "PrimitiveStringMultiline",
     "inputs": {
-      "value": "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent."
+      "value": "TAIGA-02: roughly two-metre-long unmanned Russian planetary-exploration-inspired Mars rover. Squat cylindrical brushed-silver instrument housing with a closed flat top on a rectangular dark olive-green chassis. Four broad solid-metal wheels, two per side, with raised chevron ribs and dark hubs. Each wheel connects visibly to a sturdy short suspension arm. A short camera post sits at the FRONT edge of the circular housing with one dark lens block. One robust two-joint drilling arm mounts at the FRONT centre of the chassis, ending in a short cylindrical drill head, folded against the front for travel. Rear is a plain olive service panel. Restrained housing seams, recessed fasteners, matte green paint and enclosed dark joints. Scientific field instrument, no weaponry, cabin or ornamental antennas."
     },
     "_meta": {
       "title": "Vehicle description"
@@ -41,7 +41,7 @@
   "5": {
     "class_type": "PrimitiveStringMultiline",
     "inputs": {
-      "value": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nFirst morning after landing. Front-left view of the entire ATLAS on a broad rust-coloured plain. A small landing platform and short ramp sit in the middle distance behind it, connected by two bands of fresh wheel tracks. Low sunlight from frame left catches mesh wheel edges and casts a long grounded shadow to the right. Freshly deployed body with only a scattering of grit on lower panels and wheel contact patches. Camera upright, sampling arm folded. Fine foreground pebbles and a low dark ridge on the horizon. Quiet operational survey photograph, not a promotional hero shot."
+      "value": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nFirst survey after touchdown near an eroded basin. TAIGA fully visible from front-right on flat gravel beside shallow wind-shaped ridges. Its squat descent platform is small in the distance, a short pair of ribbed-wheel tracks leading toward the rover. Early sunlight reflects softly across the circular silver housing; green chassis and four ribbed wheels remain readable in open shadow. A little landing dust rests on the lower chassis, otherwise new surfaces. Drill folded, camera upright. Layered outcrops beyond the plain, no fog or excessive exhaust haze."
     },
     "_meta": {
       "title": "Scene description"
@@ -122,10 +122,10 @@
   "11": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png"
+      "image": "mars-ai-stories/stories/vehicle-02-taiga/references/front-left.png"
     },
     "_meta": {
-      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png"
+      "title": "Reference: mars-ai-stories/stories/vehicle-02-taiga/references/front-left.png"
     }
   },
   "12": {
@@ -194,10 +194,10 @@
   "16": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/side.png"
+      "image": "mars-ai-stories/stories/vehicle-02-taiga/references/side.png"
     },
     "_meta": {
-      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/side.png"
+      "title": "Reference: mars-ai-stories/stories/vehicle-02-taiga/references/side.png"
     }
   },
   "17": {
@@ -266,10 +266,10 @@
   "21": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png"
+      "image": "mars-ai-stories/stories/vehicle-02-taiga/references/rear-right.png"
     },
     "_meta": {
-      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png"
+      "title": "Reference: mars-ai-stories/stories/vehicle-02-taiga/references/rear-right.png"
     }
   },
   "22": {
@@ -447,7 +447,7 @@
         "32",
         0
       ],
-      "filename_prefix": "mars-ai-stories/manual/02-scene"
+      "filename_prefix": "mars-ai-stories/stories/vehicle-02-taiga/scenes/01-hello-world"
     },
     "_meta": {
       "title": "SaveImage"

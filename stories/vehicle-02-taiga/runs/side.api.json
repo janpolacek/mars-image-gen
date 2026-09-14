@@ -72,7 +72,7 @@
   "7": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/canonical.png"
+      "image": "mars-ai-stories/stories/vehicle-02-taiga/references/canonical.png"
     },
     "_meta": {
       "title": "LoadImage"
@@ -227,7 +227,7 @@
         "15",
         0
       ],
-      "filename_prefix": "mars-ai-stories/manual/01b-angle"
+      "filename_prefix": "mars-ai-stories/stories/vehicle-02-taiga/references/side"
     },
     "_meta": {
       "title": "SaveImage"

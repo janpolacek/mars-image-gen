@@ -1,0 +1,25 @@
+{
+  "vehicle": "TAIGA-02: roughly two-metre-long unmanned Russian planetary-exploration-inspired Mars rover. Squat cylindrical brushed-silver instrument housing with a closed flat top on a rectangular dark olive-green chassis. Four broad solid-metal wheels, two per side, with raised chevron ribs and dark hubs. Each wheel connects visibly to a sturdy short suspension arm. A short camera post sits at the FRONT edge of the circular housing with one dark lens block. One robust two-joint drilling arm mounts at the FRONT centre of the chassis, ending in a short cylindrical drill head, folded against the front for travel. Rear is a plain olive service panel. Restrained housing seams, recessed fasteners, matte green paint and enclosed dark joints. Scientific field instrument, no weaponry, cabin or ornamental antennas.",
+  "instruction": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nTAIGA inspects a low sedimentary outcrop at the foot of a dry basin slope. Front-left photograph showing the full rover and a metre-scale exposed ledge. The single drilling arm extends from its front mount through two solid joints, short drill head touching a pale horizontal rock band. A compact mound of fresh powder lies below the shallow drill point. Four wheels rest on stable gravel with plausible axle alignment. Fine dust on the silver housing, subdued metal reflections. Side light reveals thin irregular rock layers, fractures and raised wheel ribs. No sparks, giant drill rig, loose cables or extra tools.",
+  "style": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nBarren Martian terrain: fine rusty ochre dust, dark basalt fragments, weathered layered outcrops, dry gravel and a distant eroded horizon under a muted dusty peach sky. No plants, cities, open water or people. Believable terrain scale and distant atmospheric haze.\n\nDocumentary photograph taken by a nearby robotic survey camera, ordinary 40mm-equivalent field of view at vehicle-body height. Available sunlight and sky fill, plausible directional shadows, restrained exposure, no studio lighting or theatrical rim light. Granular soil, irregular stones and fine dust in panel recesses, without excessive sharpening. Terrain occupies part of the frame to establish scale. Replace the white reference background entirely with the outdoor environment and relight the vehicle to match, not a pasted studio cutout.",
+  "references": [
+    "mars-ai-stories/stories/vehicle-02-taiga/references/front-left.png",
+    "mars-ai-stories/stories/vehicle-02-taiga/references/side.png",
+    "mars-ai-stories/stories/vehicle-02-taiga/references/rear-right.png"
+  ],
+  "reference_sha256": {
+    "mars-ai-stories/stories/vehicle-02-taiga/references/front-left.png": "e4df1f8942c37392991386e2233fece48772c55dae62fec250062aa6e4eef840",
+    "mars-ai-stories/stories/vehicle-02-taiga/references/side.png": "a19c7fc6649da3baefe92e32b83de5a98128bc276484bdd66d5c6896765663d0",
+    "mars-ai-stories/stories/vehicle-02-taiga/references/rear-right.png": "ca72d914c25d526d326fc9c21f88df12e3c6fec1da719b87ff1f2ff302ac3f66"
+  },
+  "model_family": "flux",
+  "planet_id": "mars",
+  "mission": {
+    "id": "taiga-strata",
+    "name": "Deep Strata Expedition",
+    "origin": "Russian planetary-engineering-inspired fictional expedition",
+    "purpose": "Inspect exposed sedimentary layers and collect shallow drill samples.",
+    "arrival": "A squat descent platform delivers the rover near an eroded basin rim."
+  },
+  "stage": "scene"
+}

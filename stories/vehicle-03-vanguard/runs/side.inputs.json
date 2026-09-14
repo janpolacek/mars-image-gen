@@ -1,0 +1,22 @@
+{
+  "vehicle": "VANGUARD-03: unmanned Marvel-inspired exploration probe about two metres across, tangible scientific machine rather than superhero costume. Low hexagonal deep-crimson body, flat graphite deck, satin-gold inset side panels. NO wheels. Three identical downward pulse-thruster housings form a balanced triangle firmly integrated beneath the body; fictional pulse lift enables low hover. Three short hinged landing legs attach around the lower rim with broad footpads clear of the outlets. One short central camera mast carries a dark lens block. One compact two-joint sampling arm attaches to a distinct FRONT panel, folded against it for travel; opposite rear panel plain. Matte red paint, dark heat-resistant nozzle rims, lightly brushed gold panels and tidy recessed fasteners. No cockpit, floating components, giant energy core or weapons.",
+  "instruction": "<sks> left side view eye-level shot medium shot",
+  "style": "",
+  "references": [
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/canonical.png"
+  ],
+  "reference_sha256": {
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/canonical.png": "da1c9ebb42cdb8245efadb770be5d1db98bfaf7573d67d1b86e4c3c584667a89"
+  },
+  "model_family": "qwen",
+  "planet_id": "mars",
+  "mission": {
+    "id": "vanguard-reach",
+    "name": "Far Reach Demonstrator",
+    "origin": "Marvel-inspired fictional advanced-technology expedition",
+    "purpose": "Reach crater terrain inaccessible to wheels using experimental pulse lift.",
+    "arrival": "A robotic carrier releases the probe near a small crater.",
+    "fiction_boundary": "Pulse lift is invented; visible supports, shadows and dust interaction must remain coherent."
+  },
+  "stage": "angle"
+}

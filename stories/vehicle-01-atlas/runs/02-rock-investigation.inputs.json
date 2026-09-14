@@ -1,0 +1,25 @@
+{
+  "vehicle": "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent.",
+  "instruction": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nATLAS examines a dark fractured basalt boulder beside its front wheel. Front-right photograph, close enough to read contact while keeping the whole rover in frame. The single FRONT arm unfolds through two connected joints, cylindrical tool pressed against one rough rock face. Wheels support the rover firmly, far wheels naturally occluded. A small fresh pale abrasion marks the contact, a few fallen grains immediately beneath it. Side sunlight reveals rock pits, mesh wheel texture and fine dust around suspension pivots. No extra arm, floating instrument or dramatic debris cloud.",
+  "style": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nBarren Martian terrain: fine rusty ochre dust, dark basalt fragments, weathered layered outcrops, dry gravel and a distant eroded horizon under a muted dusty peach sky. No plants, cities, open water or people. Believable terrain scale and distant atmospheric haze.\n\nDocumentary photograph taken by a nearby robotic survey camera, ordinary 40mm-equivalent field of view at vehicle-body height. Available sunlight and sky fill, plausible directional shadows, restrained exposure, no studio lighting or theatrical rim light. Granular soil, irregular stones and fine dust in panel recesses, without excessive sharpening. Terrain occupies part of the frame to establish scale. Replace the white reference background entirely with the outdoor environment and relight the vehicle to match, not a pasted studio cutout.",
+  "references": [
+    "mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png",
+    "mars-ai-stories/stories/vehicle-01-atlas/references/side.png",
+    "mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png"
+  ],
+  "reference_sha256": {
+    "mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png": "7fff28273c5d061f3ea7b7f185e169eecaaf28f9d3c95f3ab797c526ed57fa1b",
+    "mars-ai-stories/stories/vehicle-01-atlas/references/side.png": "fbf6e4613d139ba1f1d977439b4335d395e66f741522fb02c352f57f204fff67",
+    "mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png": "30e2fdd13e00cfc773c93867c4e8d26e260d1847c8e9f4d01b179a69c8edc4a7"
+  },
+  "model_family": "flux",
+  "planet_id": "mars",
+  "mission": {
+    "id": "atlas-survey",
+    "name": "First Light Survey",
+    "origin": "American aerospace-inspired fictional expedition",
+    "purpose": "Map a landing plain and inspect basalt exposures for later sampling routes.",
+    "arrival": "A robotic lander lowers a short ramp onto a broad stony plain."
+  },
+  "stage": "scene"
+}

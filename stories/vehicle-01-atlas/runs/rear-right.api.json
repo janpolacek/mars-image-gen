@@ -105,7 +105,7 @@
         "8",
         0
       ],
-      "prompt": "<sks> left side view eye-level shot medium shot"
+      "prompt": "<sks> back-right quarter view eye-level shot medium shot"
     },
     "_meta": {
       "title": "TextEncodeQwenImageEditPlus"
@@ -227,7 +227,7 @@
         "15",
         0
       ],
-      "filename_prefix": "mars-ai-stories/manual/01b-angle"
+      "filename_prefix": "mars-ai-stories/stories/vehicle-01-atlas/references/rear-right"
     },
     "_meta": {
       "title": "SaveImage"

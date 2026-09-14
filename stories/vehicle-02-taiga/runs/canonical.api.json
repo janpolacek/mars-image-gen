@@ -32,7 +32,7 @@
   "4": {
     "class_type": "PrimitiveStringMultiline",
     "inputs": {
-      "value": "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent."
+      "value": "TAIGA-02: roughly two-metre-long unmanned Russian planetary-exploration-inspired Mars rover. Squat cylindrical brushed-silver instrument housing with a closed flat top on a rectangular dark olive-green chassis. Four broad solid-metal wheels, two per side, with raised chevron ribs and dark hubs. Each wheel connects visibly to a sturdy short suspension arm. A short camera post sits at the FRONT edge of the circular housing with one dark lens block. One robust two-joint drilling arm mounts at the FRONT centre of the chassis, ending in a short cylindrical drill head, folded against the front for travel. Rear is a plain olive service panel. Restrained housing seams, recessed fasteners, matte green paint and enclosed dark joints. Scientific field instrument, no weaponry, cabin or ornamental antennas."
     },
     "_meta": {
       "title": "Vehicle description"
@@ -231,7 +231,7 @@
         "17",
         0
       ],
-      "filename_prefix": "mars-ai-stories/manual/01a-canonical"
+      "filename_prefix": "mars-ai-stories/stories/vehicle-02-taiga/references/canonical"
     },
     "_meta": {
       "title": "SaveImage"

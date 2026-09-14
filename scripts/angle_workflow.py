@@ -7,7 +7,9 @@ def build(reference, prompt, prefix, seed=410101):
         g[key] = {'class_type': kind, 'inputs': inputs, '_meta': {'title': kind}}
         return [key, 0]
     model = add('UNETLoader', unet_name='qwen_image_edit_2511_fp8mixed.safetensors', weight_dtype='default')
-    model = add('LoraLoaderModelOnly', model=model, lora_name='qwen-image-edit-2511-multiple-angles-lora.safetensors', strength_model=0.9)
+    # No 2511 multiple-angles LoRA has been published. Camera instructions in
+    # the prompt drive the angle edit; the official 2511 Lightning LoRA below
+    # keeps the stage practical on local hardware.
     model = add('LoraLoaderModelOnly', model=model, lora_name='Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors', strength_model=1.0)
     model = add('ModelSamplingAuraFlow', model=model, shift=3.1)
     model = add('CFGNorm', model=model, strength=1.0)

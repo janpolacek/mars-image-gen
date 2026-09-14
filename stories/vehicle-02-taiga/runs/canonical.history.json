@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    9,
+    "6f7abd82-c4a7-460f-90de-bf86a6c8ed3a",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux-2-klein-base-4b.safetensors",
+          "weight_dtype": "default"
+        },
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen_3_4b.safetensors",
+          "type": "flux2",
+          "device": "cpu"
+        },
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        },
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "4": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "TAIGA-02: roughly two-metre-long unmanned Russian planetary-exploration-inspired Mars rover. Squat cylindrical brushed-silver instrument housing with a closed flat top on a rectangular dark olive-green chassis. Four broad solid-metal wheels, two per side, with raised chevron ribs and dark hubs. Each wheel connects visibly to a sturdy short suspension arm. A short camera post sits at the FRONT edge of the circular housing with one dark lens block. One robust two-joint drilling arm mounts at the FRONT centre of the chassis, ending in a short cylindrical drill head, folded against the front for travel. Rear is a plain olive service panel. Restrained housing seams, recessed fasteners, matte green paint and enclosed dark joints. Scientific field instrument, no weaponry, cabin or ornamental antennas."
+        },
+        "_meta": {
+          "title": "Vehicle description"
+        }
+      },
+      "5": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "Front-left three-quarter view at body height. Entire vehicle visible, front sampling tool on the near side, rear extending away. Arm folded into its travel cradle, propulsion hardware readable. Canonical baseline design."
+        },
+        "_meta": {
+          "title": "Camera / reference instructions"
+        }
+      },
+      "6": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nEngineering reference photograph on a seamless neutral WHITE floor and WHITE background. Soft broad light from above-left, gentle fill, faint contact shadow. Expose white body panels slightly darker than the backdrop so edges remain visible. Entire vehicle with clear margin, sharp focus across the body, moderate perspective like a 70mm lens. Clean baseline manufactured surfaces with subtle machining marks. No scenery, rocks, red dust, display pedestal or green reflections."
+        },
+        "_meta": {
+          "title": "Shared realism and photography"
+        }
+      },
+      "7": {
+        "class_type": "StringConcatenate",
+        "inputs": {
+          "string_a": [
+            "5",
+            0
+          ],
+          "string_b": [
+            "4",
+            0
+          ],
+          "delimiter": "\n\n"
+        },
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "8": {
+        "class_type": "StringConcatenate",
+        "inputs": {
+          "string_a": [
+            "7",
+            0
+          ],
+          "string_b": [
+            "6",
+            0
+          ],
+          "delimiter": "\n\n"
+        },
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "9": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": [
+            "8",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "10": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Empty negative prompt (Base CFG)"
+        }
+      },
+      "11": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 1152,
+          "height": 864,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "EmptyFlux2LatentImage"
+        }
+      },
+      "12": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 410101
+        },
+        "_meta": {
+          "title": "RandomNoise"
+        }
+      },
+      "13": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "9",
+            0
+          ],
+          "negative": [
+            "10",
+            0
+          ],
+          "cfg": 5.0
+        },
+        "_meta": {
+          "title": "CFGGuider"
+        }
+      },
+      "14": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        },
+        "_meta": {
+          "title": "KSamplerSelect"
+        }
+      },
+      "15": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 20,
+          "width": 1152,
+          "height": 864
+        },
+        "_meta": {
+          "title": "Flux2Scheduler"
+        }
+      },
+      "16": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "12",
+            0
+          ],
+          "guider": [
+            "13",
+            0
+          ],
+          "sampler": [
+            "14",
+            0
+          ],
+          "sigmas": [
+            "15",
+            0
+          ],
+          "latent_image": [
+            "11",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "SamplerCustomAdvanced"
+        }
+      },
+      "17": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "16",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "18": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "17",
+            0
+          ],
+          "filename_prefix": "mars-ai-stories/stories/vehicle-02-taiga/references/canonical"
+        },
+        "_meta": {
+          "title": "SaveImage"
+        }
+      }
+    },
+    {
+      "client_id": "89afbd0a-0c4a-4e60-b243-76624e88d520",
+      "create_time": 1789410794901
+    },
+    [
+      "18"
+    ]
+  ],
+  "outputs": {
+    "18": {
+      "images": [
+        {
+          "filename": "canonical_00001_.png",
+          "subfolder": "mars-ai-stories/stories/vehicle-02-taiga/references",
+          "type": "output"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "6f7abd82-c4a7-460f-90de-bf86a6c8ed3a",
+          "timestamp": 1789410794901
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "10",
+            "12",
+            "14"
+          ],
+          "prompt_id": "6f7abd82-c4a7-460f-90de-bf86a6c8ed3a",
+          "timestamp": 1789410794902
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "6f7abd82-c4a7-460f-90de-bf86a6c8ed3a",
+          "timestamp": 1789410847045
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "18": {
+      "node_id": "18",
+      "display_node": "18",
+      "parent_node": null,
+      "real_node_id": "18"
+    }
+  }
+}

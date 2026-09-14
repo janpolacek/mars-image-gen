@@ -1,0 +1,17 @@
+{
+  "vehicle": "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent.",
+  "instruction": "Front-left three-quarter view at body height. Entire vehicle visible, front sampling tool on the near side, rear extending away. Arm folded into its travel cradle, propulsion hardware readable. Canonical baseline design.",
+  "style": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nEngineering reference photograph on a seamless neutral WHITE floor and WHITE background. Soft broad light from above-left, gentle fill, faint contact shadow. Expose white body panels slightly darker than the backdrop so edges remain visible. Entire vehicle with clear margin, sharp focus across the body, moderate perspective like a 70mm lens. Clean baseline manufactured surfaces with subtle machining marks. No scenery, rocks, red dust, display pedestal or green reflections.",
+  "references": [],
+  "reference_sha256": {},
+  "model_family": "flux",
+  "planet_id": "mars",
+  "mission": {
+    "id": "atlas-survey",
+    "name": "First Light Survey",
+    "origin": "American aerospace-inspired fictional expedition",
+    "purpose": "Map a landing plain and inspect basalt exposures for later sampling routes.",
+    "arrival": "A robotic lander lowers a short ramp onto a broad stony plain."
+  },
+  "stage": "canonical"
+}

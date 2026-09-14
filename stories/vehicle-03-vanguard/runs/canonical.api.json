@@ -32,7 +32,7 @@
   "4": {
     "class_type": "PrimitiveStringMultiline",
     "inputs": {
-      "value": "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent."
+      "value": "VANGUARD-03: unmanned Marvel-inspired exploration probe about two metres across, tangible scientific machine rather than superhero costume. Low hexagonal deep-crimson body, flat graphite deck, satin-gold inset side panels. NO wheels. Three identical downward pulse-thruster housings form a balanced triangle firmly integrated beneath the body; fictional pulse lift enables low hover. Three short hinged landing legs attach around the lower rim with broad footpads clear of the outlets. One short central camera mast carries a dark lens block. One compact two-joint sampling arm attaches to a distinct FRONT panel, folded against it for travel; opposite rear panel plain. Matte red paint, dark heat-resistant nozzle rims, lightly brushed gold panels and tidy recessed fasteners. No cockpit, floating components, giant energy core or weapons."
     },
     "_meta": {
       "title": "Vehicle description"
@@ -41,7 +41,7 @@
   "5": {
     "class_type": "PrimitiveStringMultiline",
     "inputs": {
-      "value": "Front-left three-quarter view at body height. Entire vehicle visible, front sampling tool on the near side, rear extending away. Arm folded into its travel cradle, propulsion hardware readable. Canonical baseline design."
+      "value": "Front-left three-quarter view at body height. Entire vehicle visible, front sampling tool on the near side, rear extending away. Arm folded into its travel cradle, propulsion hardware readable. Canonical baseline design.\nFor reference photography, rest the probe on its three extended landing legs on the white floor. Thrusters OFF, no glow or dust plume. Arm folded. Keep all three thruster housings, allowing natural occlusion."
     },
     "_meta": {
       "title": "Camera / reference instructions"
@@ -231,7 +231,7 @@
         "17",
         0
       ],
-      "filename_prefix": "mars-ai-stories/manual/01a-canonical"
+      "filename_prefix": "mars-ai-stories/stories/vehicle-03-vanguard/references/canonical"
     },
     "_meta": {
       "title": "SaveImage"

@@ -72,7 +72,7 @@
   "7": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "mars-ai-stories/stories/vehicle-01-atlas/references/canonical.png"
+      "image": "mars-ai-stories/stories/vehicle-03-vanguard/references/canonical.png"
     },
     "_meta": {
       "title": "LoadImage"
@@ -105,7 +105,7 @@
         "8",
         0
       ],
-      "prompt": "<sks> left side view eye-level shot medium shot"
+      "prompt": "<sks> front-left quarter view high-angle shot medium shot"
     },
     "_meta": {
       "title": "TextEncodeQwenImageEditPlus"
@@ -227,7 +227,7 @@
         "15",
         0
       ],
-      "filename_prefix": "mars-ai-stories/manual/01b-angle"
+      "filename_prefix": "mars-ai-stories/stories/vehicle-03-vanguard/references/front-left"
     },
     "_meta": {
       "title": "SaveImage"

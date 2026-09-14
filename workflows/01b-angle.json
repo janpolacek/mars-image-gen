@@ -1,7 +1,7 @@
 {
   "version": 0.4,
-  "last_node_id": 17,
-  "last_link_id": 22,
+  "last_node_id": 16,
+  "last_link_id": 21,
   "nodes": [
     {
       "id": 1,
@@ -104,14 +104,14 @@
         "Node name for S&R": "LoraLoaderModelOnly"
       },
       "widgets_values": [
-        "qwen-image-edit-2511-multiple-angles-lora.safetensors",
-        0.9
+        "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+        1.0
       ]
     },
     {
       "id": 3,
-      "type": "LoraLoaderModelOnly",
-      "title": "LoraLoaderModelOnly",
+      "type": "ModelSamplingAuraFlow",
+      "title": "ModelSamplingAuraFlow",
       "pos": [
         0,
         680
@@ -130,18 +130,10 @@
           "link": 2
         },
         {
-          "name": "lora_name",
-          "type": "COMBO",
-          "widget": {
-            "name": "lora_name"
-          },
-          "link": null
-        },
-        {
-          "name": "strength_model",
+          "name": "shift",
           "type": "FLOAT",
           "widget": {
-            "name": "strength_model"
+            "name": "shift"
           },
           "link": null
         }
@@ -156,17 +148,16 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "LoraLoaderModelOnly"
+        "Node name for S&R": "ModelSamplingAuraFlow"
       },
       "widgets_values": [
-        "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
-        1.0
+        3.1
       ]
     },
     {
       "id": 4,
-      "type": "ModelSamplingAuraFlow",
-      "title": "ModelSamplingAuraFlow",
+      "type": "CFGNorm",
+      "title": "CFGNorm",
       "pos": [
         0,
         1020
@@ -185,52 +176,6 @@
           "link": 3
         },
         {
-          "name": "shift",
-          "type": "FLOAT",
-          "widget": {
-            "name": "shift"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            4
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ModelSamplingAuraFlow"
-      },
-      "widgets_values": [
-        3.1
-      ]
-    },
-    {
-      "id": 5,
-      "type": "CFGNorm",
-      "title": "CFGNorm",
-      "pos": [
-        0,
-        1360
-      ],
-      "size": [
-        420,
-        300
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 4
-        },
-        {
           "name": "strength",
           "type": "FLOAT",
           "widget": {
@@ -244,7 +189,7 @@
           "name": "patched_model",
           "type": "MODEL",
           "links": [
-            16
+            15
           ]
         }
       ],
@@ -256,19 +201,19 @@
       ]
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "CLIPLoader",
       "title": "CLIPLoader",
       "pos": [
-        470,
-        0
+        0,
+        1360
       ],
       "size": [
         420,
         300
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -301,8 +246,8 @@
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            6,
-            9
+            5,
+            8
           ]
         }
       ],
@@ -316,19 +261,19 @@
       ]
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "VAELoader",
       "title": "VAELoader",
       "pos": [
         470,
-        340
+        0
       ],
       "size": [
         420,
         300
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -345,10 +290,10 @@
           "name": "VAE",
           "type": "VAE",
           "links": [
-            7,
-            10,
-            15,
-            21
+            6,
+            9,
+            14,
+            20
           ]
         }
       ],
@@ -360,19 +305,19 @@
       ]
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "LoadImage",
       "title": "LoadImage",
       "pos": [
         470,
-        680
+        340
       ],
       "size": [
         420,
         300
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -389,7 +334,7 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            5
+            4
           ]
         },
         {
@@ -407,9 +352,47 @@
       ]
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "FluxKontextImageScale",
       "title": "FluxKontextImageScale",
+      "pos": [
+        470,
+        680
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            7,
+            10,
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxKontextImageScale"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "TextEncodeQwenImageEditPlus",
+      "title": "TextEncodeQwenImageEditPlus",
       "pos": [
         470,
         1020
@@ -423,26 +406,44 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "image",
-          "type": "IMAGE",
+          "name": "clip",
+          "type": "CLIP",
           "link": 5
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 6
+        },
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
           "links": [
-            8,
-            11,
-            14
+            11
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "FluxKontextImageScale"
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
       },
-      "widgets_values": []
+      "widgets_values": [
+        "<sks> left side view eye-level shot medium shot"
+      ]
     },
     {
       "id": 10,
@@ -463,17 +464,17 @@
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 6
+          "link": 8
         },
         {
           "name": "vae",
           "type": "VAE",
-          "link": 7
+          "link": 9
         },
         {
           "name": "image1",
           "type": "IMAGE",
-          "link": 8
+          "link": 10
         },
         {
           "name": "prompt",
@@ -497,13 +498,13 @@
         "Node name for S&R": "TextEncodeQwenImageEditPlus"
       },
       "widgets_values": [
-        "<sks> left side view eye-level shot medium shot"
+        ""
       ]
     },
     {
       "id": 11,
-      "type": "TextEncodeQwenImageEditPlus",
-      "title": "TextEncodeQwenImageEditPlus",
+      "type": "FluxKontextMultiReferenceLatentMethod",
+      "title": "FluxKontextMultiReferenceLatentMethod",
       "pos": [
         940,
         0
@@ -517,25 +518,15 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 9
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 10
-        },
-        {
-          "name": "image1",
-          "type": "IMAGE",
+          "name": "conditioning",
+          "type": "CONDITIONING",
           "link": 11
         },
         {
-          "name": "prompt",
-          "type": "STRING",
+          "name": "reference_latents_method",
+          "type": "COMBO",
           "widget": {
-            "name": "prompt"
+            "name": "reference_latents_method"
           },
           "link": null
         }
@@ -545,15 +536,15 @@
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
-            13
+            16
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+        "Node name for S&R": "FluxKontextMultiReferenceLatentMethod"
       },
       "widgets_values": [
-        ""
+        "index_timestep_zero"
       ]
     },
     {
@@ -604,8 +595,8 @@
     },
     {
       "id": 13,
-      "type": "FluxKontextMultiReferenceLatentMethod",
-      "title": "FluxKontextMultiReferenceLatentMethod",
+      "type": "VAEEncode",
+      "title": "VAEEncode",
       "pos": [
         940,
         680
@@ -619,39 +610,34 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "conditioning",
-          "type": "CONDITIONING",
+          "name": "pixels",
+          "type": "IMAGE",
           "link": 13
         },
         {
-          "name": "reference_latents_method",
-          "type": "COMBO",
-          "widget": {
-            "name": "reference_latents_method"
-          },
-          "link": null
+          "name": "vae",
+          "type": "VAE",
+          "link": 14
         }
       ],
       "outputs": [
         {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
+          "name": "LATENT",
+          "type": "LATENT",
           "links": [
             18
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "FluxKontextMultiReferenceLatentMethod"
+        "Node name for S&R": "VAEEncode"
       },
-      "widgets_values": [
-        "index_timestep_zero"
-      ]
+      "widgets_values": []
     },
     {
       "id": 14,
-      "type": "VAEEncode",
-      "title": "VAEEncode",
+      "type": "KSampler",
+      "title": "KSampler",
       "pos": [
         940,
         1020
@@ -665,65 +651,24 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "pixels",
-          "type": "IMAGE",
-          "link": 14
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 15
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            19
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAEEncode"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 15,
-      "type": "KSampler",
-      "title": "KSampler",
-      "pos": [
-        940,
-        1360
-      ],
-      "size": [
-        420,
-        300
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
           "name": "model",
           "type": "MODEL",
-          "link": 16
+          "link": 15
         },
         {
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 17
+          "link": 16
         },
         {
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 18
+          "link": 17
         },
         {
           "name": "latent_image",
           "type": "LATENT",
-          "link": 19
+          "link": 18
         },
         {
           "name": "seed",
@@ -779,7 +724,7 @@
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            20
+            19
           ]
         }
       ],
@@ -797,9 +742,50 @@
       ]
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "VAEDecode",
       "title": "VAEDecode",
+      "pos": [
+        940,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 19
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 16,
+      "type": "SaveImage",
+      "title": "SaveImage",
       "pos": [
         1410,
         0
@@ -813,50 +799,9 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 20
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 21
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            22
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAEDecode"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 17,
-      "type": "SaveImage",
-      "title": "SaveImage",
-      "pos": [
-        1410,
-        340
-      ],
-      "size": [
-        420,
-        300
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
           "name": "images",
           "type": "IMAGE",
-          "link": 22
+          "link": 21
         },
         {
           "name": "filename_prefix",
@@ -909,67 +854,67 @@
     ],
     [
       4,
-      4,
+      7,
       0,
-      5,
-      0,
-      "MODEL"
-    ],
-    [
-      5,
       8,
-      0,
-      9,
       0,
       "IMAGE"
     ],
     [
+      5,
+      5,
+      0,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
       6,
       6,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      7,
+      8,
+      0,
+      9,
+      2,
+      "IMAGE"
+    ],
+    [
+      8,
+      5,
       0,
       10,
       0,
       "CLIP"
     ],
     [
-      7,
-      7,
-      0,
-      10,
-      1,
-      "VAE"
-    ],
-    [
-      8,
-      9,
-      0,
-      10,
-      2,
-      "IMAGE"
-    ],
-    [
       9,
       6,
       0,
-      11,
-      0,
-      "CLIP"
+      10,
+      1,
+      "VAE"
     ],
     [
       10,
-      7,
+      8,
       0,
-      11,
-      1,
-      "VAE"
+      10,
+      2,
+      "IMAGE"
     ],
     [
       11,
       9,
       0,
       11,
-      2,
-      "IMAGE"
+      0,
+      "CONDITIONING"
     ],
     [
       12,
@@ -981,81 +926,73 @@
     ],
     [
       13,
-      11,
+      8,
       0,
       13,
       0,
-      "CONDITIONING"
+      "IMAGE"
     ],
     [
       14,
-      9,
+      6,
       0,
-      14,
-      0,
-      "IMAGE"
+      13,
+      1,
+      "VAE"
     ],
     [
       15,
-      7,
+      4,
       0,
       14,
-      1,
-      "VAE"
+      0,
+      "MODEL"
     ],
     [
       16,
-      5,
+      11,
       0,
-      15,
-      0,
-      "MODEL"
+      14,
+      1,
+      "CONDITIONING"
     ],
     [
       17,
       12,
       0,
-      15,
-      1,
+      14,
+      2,
       "CONDITIONING"
     ],
     [
       18,
       13,
       0,
-      15,
-      2,
-      "CONDITIONING"
+      14,
+      3,
+      "LATENT"
     ],
     [
       19,
       14,
       0,
       15,
-      3,
+      0,
       "LATENT"
     ],
     [
       20,
+      6,
+      0,
       15,
-      0,
-      16,
-      0,
-      "LATENT"
-    ],
-    [
-      21,
-      7,
-      0,
-      16,
       1,
       "VAE"
     ],
     [
-      22,
-      16,
+      21,
+      15,
       0,
-      17,
+      16,
       0,
       "IMAGE"
     ]

@@ -1,0 +1,21 @@
+{
+  "vehicle": "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent.",
+  "instruction": "<sks> front-left quarter view high-angle shot medium shot",
+  "style": "",
+  "references": [
+    "mars-ai-stories/stories/vehicle-01-atlas/references/canonical.png"
+  ],
+  "reference_sha256": {
+    "mars-ai-stories/stories/vehicle-01-atlas/references/canonical.png": "7af32cec57394767ec1da063040de08f59c4a6e8418bda9ddf5ac3ba3805e8e4"
+  },
+  "model_family": "qwen",
+  "planet_id": "mars",
+  "mission": {
+    "id": "atlas-survey",
+    "name": "First Light Survey",
+    "origin": "American aerospace-inspired fictional expedition",
+    "purpose": "Map a landing plain and inspect basalt exposures for later sampling routes.",
+    "arrival": "A robotic lander lowers a short ramp onto a broad stony plain."
+  },
+  "stage": "angle"
+}

@@ -1,0 +1,17 @@
+{
+  "vehicle": "TAIGA-02: roughly two-metre-long unmanned Russian planetary-exploration-inspired Mars rover. Squat cylindrical brushed-silver instrument housing with a closed flat top on a rectangular dark olive-green chassis. Four broad solid-metal wheels, two per side, with raised chevron ribs and dark hubs. Each wheel connects visibly to a sturdy short suspension arm. A short camera post sits at the FRONT edge of the circular housing with one dark lens block. One robust two-joint drilling arm mounts at the FRONT centre of the chassis, ending in a short cylindrical drill head, folded against the front for travel. Rear is a plain olive service panel. Restrained housing seams, recessed fasteners, matte green paint and enclosed dark joints. Scientific field instrument, no weaponry, cabin or ornamental antennas.",
+  "instruction": "Front-left three-quarter view at body height. Entire vehicle visible, front sampling tool on the near side, rear extending away. Arm folded into its travel cradle, propulsion hardware readable. Canonical baseline design.",
+  "style": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nEngineering reference photograph on a seamless neutral WHITE floor and WHITE background. Soft broad light from above-left, gentle fill, faint contact shadow. Expose white body panels slightly darker than the backdrop so edges remain visible. Entire vehicle with clear margin, sharp focus across the body, moderate perspective like a 70mm lens. Clean baseline manufactured surfaces with subtle machining marks. No scenery, rocks, red dust, display pedestal or green reflections.",
+  "references": [],
+  "reference_sha256": {},
+  "model_family": "flux",
+  "planet_id": "mars",
+  "mission": {
+    "id": "taiga-strata",
+    "name": "Deep Strata Expedition",
+    "origin": "Russian planetary-engineering-inspired fictional expedition",
+    "purpose": "Inspect exposed sedimentary layers and collect shallow drill samples.",
+    "arrival": "A squat descent platform delivers the rover near an eroded basin rim."
+  },
+  "stage": "canonical"
+}

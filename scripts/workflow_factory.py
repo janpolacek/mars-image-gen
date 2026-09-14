@@ -8,8 +8,10 @@ def build(identity, instruction, style, references, prefix, seed=410101, scene=F
         key = str(len(graph) + 1)
         graph[key] = {'class_type': kind, 'inputs': inputs, '_meta': {'title': title or kind}}
         return [key, 0]
-    model = add('UNETLoader', unet_name='flux-2-klein-base-9b-fp8.safetensors', weight_dtype='default')
-    clip = add('CLIPLoader', clip_name='qwen_3_8b_fp8mixed.safetensors', type='flux2', device='cpu')
+    # These are the current public Flux.2 Klein weights; the former 9B/8B
+    # filenames were never published by the model provider.
+    model = add('UNETLoader', unet_name='flux-2-klein-base-4b.safetensors', weight_dtype='default')
+    clip = add('CLIPLoader', clip_name='qwen_3_4b.safetensors', type='flux2', device='cpu')
     vae = add('VAELoader', vae_name='flux2-vae.safetensors')
     a = add('PrimitiveStringMultiline', 'Vehicle description', value=identity)
     b = add('PrimitiveStringMultiline', 'Scene description' if scene else 'Camera / reference instructions', value=instruction)
