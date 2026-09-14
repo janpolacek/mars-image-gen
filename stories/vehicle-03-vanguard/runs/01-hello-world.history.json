@@ -1,0 +1,516 @@
+{
+  "prompt": [
+    20,
+    "76be23a2-5258-4849-b680-a499f5e7f321",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux-2-klein-base-4b.safetensors",
+          "weight_dtype": "default"
+        },
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen_3_4b.safetensors",
+          "type": "flux2",
+          "device": "cpu"
+        },
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        },
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "4": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "VANGUARD-03: unmanned Marvel-inspired exploration probe about two metres across, tangible scientific machine rather than superhero costume. Low hexagonal deep-crimson body, flat graphite deck, satin-gold inset side panels. NO wheels. Three identical downward pulse-thruster housings form a balanced triangle firmly integrated beneath the body; fictional pulse lift enables low hover. Three short hinged landing legs attach around the lower rim with broad footpads clear of the outlets. One short central camera mast carries a dark lens block. One compact two-joint sampling arm attaches to a distinct FRONT panel, folded against it for travel; opposite rear panel plain. Matte red paint, dark heat-resistant nozzle rims, lightly brushed gold panels and tidy recessed fasteners. No cockpit, floating components, giant energy core or weapons."
+        },
+        "_meta": {
+          "title": "Vehicle description"
+        }
+      },
+      "5": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nImmediately after arrival at a shallow crater, VANGUARD hovers half a metre above the ground in full front-left view. Landing legs folded clear of outlets, arm folded. Only restrained pale glow inside dark thruster rims, no long flames. Low irregular dust veil spreads close to the surface; a separate shadow falls below and slightly right of the probe. New crimson and satin-gold panels carry a few dust grains. Small carrier platform distant near crater rim. Early side sunlight, textured stony foreground, empty dusty sky. No wheel tracks or superhero effects."
+        },
+        "_meta": {
+          "title": "Scene description"
+        }
+      },
+      "6": {
+        "class_type": "PrimitiveStringMultiline",
+        "inputs": {
+          "value": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nBarren Martian terrain: fine rusty ochre dust, dark basalt fragments, weathered layered outcrops, dry gravel and a distant eroded horizon under a muted dusty peach sky. No plants, cities, open water or people. Believable terrain scale and distant atmospheric haze.\n\nDocumentary photograph taken by a nearby robotic survey camera, ordinary 40mm-equivalent field of view at vehicle-body height. Available sunlight and sky fill, plausible directional shadows, restrained exposure, no studio lighting or theatrical rim light. Granular soil, irregular stones and fine dust in panel recesses, without excessive sharpening. Terrain occupies part of the frame to establish scale. Replace the white reference background entirely with the outdoor environment and relight the vehicle to match, not a pasted studio cutout."
+        },
+        "_meta": {
+          "title": "Shared realism and photography"
+        }
+      },
+      "7": {
+        "class_type": "StringConcatenate",
+        "inputs": {
+          "string_a": [
+            "5",
+            0
+          ],
+          "string_b": [
+            "4",
+            0
+          ],
+          "delimiter": "\n\n"
+        },
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "8": {
+        "class_type": "StringConcatenate",
+        "inputs": {
+          "string_a": [
+            "7",
+            0
+          ],
+          "string_b": [
+            "6",
+            0
+          ],
+          "delimiter": "\n\n"
+        },
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "9": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": [
+            "8",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "10": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Empty negative prompt (Base CFG)"
+        }
+      },
+      "11": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "mars-ai-stories/stories/vehicle-03-vanguard/references/front-left.png"
+        },
+        "_meta": {
+          "title": "Reference: mars-ai-stories/stories/vehicle-03-vanguard/references/front-left.png"
+        }
+      },
+      "12": {
+        "class_type": "ImageScaleToTotalPixels",
+        "inputs": {
+          "image": [
+            "11",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "megapixels": 0.6,
+          "resolution_steps": 1
+        },
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "13": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "12",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "14": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "9",
+            0
+          ],
+          "latent": [
+            "13",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "15": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "10",
+            0
+          ],
+          "latent": [
+            "13",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "16": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "mars-ai-stories/stories/vehicle-03-vanguard/references/side.png"
+        },
+        "_meta": {
+          "title": "Reference: mars-ai-stories/stories/vehicle-03-vanguard/references/side.png"
+        }
+      },
+      "17": {
+        "class_type": "ImageScaleToTotalPixels",
+        "inputs": {
+          "image": [
+            "16",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "megapixels": 0.6,
+          "resolution_steps": 1
+        },
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "18": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "17",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "19": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "14",
+            0
+          ],
+          "latent": [
+            "18",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "20": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "15",
+            0
+          ],
+          "latent": [
+            "18",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "21": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "mars-ai-stories/stories/vehicle-03-vanguard/references/rear-right.png"
+        },
+        "_meta": {
+          "title": "Reference: mars-ai-stories/stories/vehicle-03-vanguard/references/rear-right.png"
+        }
+      },
+      "22": {
+        "class_type": "ImageScaleToTotalPixels",
+        "inputs": {
+          "image": [
+            "21",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "megapixels": 0.6,
+          "resolution_steps": 1
+        },
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "23": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "22",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "24": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "19",
+            0
+          ],
+          "latent": [
+            "23",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "25": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "20",
+            0
+          ],
+          "latent": [
+            "23",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "ReferenceLatent"
+        }
+      },
+      "26": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 1344,
+          "height": 768,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "EmptyFlux2LatentImage"
+        }
+      },
+      "27": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 410101
+        },
+        "_meta": {
+          "title": "RandomNoise"
+        }
+      },
+      "28": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "24",
+            0
+          ],
+          "negative": [
+            "25",
+            0
+          ],
+          "cfg": 5.0
+        },
+        "_meta": {
+          "title": "CFGGuider"
+        }
+      },
+      "29": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        },
+        "_meta": {
+          "title": "KSamplerSelect"
+        }
+      },
+      "30": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 20,
+          "width": 1344,
+          "height": 768
+        },
+        "_meta": {
+          "title": "Flux2Scheduler"
+        }
+      },
+      "31": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "27",
+            0
+          ],
+          "guider": [
+            "28",
+            0
+          ],
+          "sampler": [
+            "29",
+            0
+          ],
+          "sigmas": [
+            "30",
+            0
+          ],
+          "latent_image": [
+            "26",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "SamplerCustomAdvanced"
+        }
+      },
+      "32": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "31",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "33": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "32",
+            0
+          ],
+          "filename_prefix": "mars-ai-stories/stories/vehicle-03-vanguard/scenes/01-hello-world"
+        },
+        "_meta": {
+          "title": "SaveImage"
+        }
+      }
+    },
+    {
+      "client_id": "3cddd849-6c91-4d6f-9f2e-88eb34c60f2c",
+      "create_time": 1789411810093
+    },
+    [
+      "33"
+    ]
+  ],
+  "outputs": {
+    "33": {
+      "images": [
+        {
+          "filename": "01-hello-world_00001_.png",
+          "subfolder": "mars-ai-stories/stories/vehicle-03-vanguard/scenes",
+          "type": "output"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "76be23a2-5258-4849-b680-a499f5e7f321",
+          "timestamp": 1789411812232
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "76be23a2-5258-4849-b680-a499f5e7f321",
+          "timestamp": 1789411812239
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "76be23a2-5258-4849-b680-a499f5e7f321",
+          "timestamp": 1789411999126
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "33": {
+      "node_id": "33",
+      "display_node": "33",
+      "parent_node": null,
+      "real_node_id": "33"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "vehicle": "VANGUARD-03: unmanned Marvel-inspired exploration probe about two metres across, tangible scientific machine rather than superhero costume. Low hexagonal deep-crimson body, flat graphite deck, satin-gold inset side panels. NO wheels. Three identical downward pulse-thruster housings form a balanced triangle firmly integrated beneath the body; fictional pulse lift enables low hover. Three short hinged landing legs attach around the lower rim with broad footpads clear of the outlets. One short central camera mast carries a dark lens block. One compact two-joint sampling arm attaches to a distinct FRONT panel, folded against it for travel; opposite rear panel plain. Matte red paint, dark heat-resistant nozzle rims, lightly brushed gold panels and tidy recessed fasteners. No cockpit, floating components, giant energy core or weapons.",
+  "instruction": "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nVANGUARD has landed beside a fractured dark rock inside a shallow crater. Front-right photograph at body height showing the entire probe, rock and support contacts. Three landing legs extended, broad footpads firmly planted. Pulse thrusters completely OFF: dark outlets, no airborne dust. One front sampling arm reaches from its mount through two connected joints to touch a fresh fracture. Small pebbles around footpads, little pale powder at the contact. Graphite deck, crimson shell and gold panels have subdued natural reflections and fine settled dust. Clear late-morning light. No wheels, additional arms or floating instruments.",
+  "style": "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nBarren Martian terrain: fine rusty ochre dust, dark basalt fragments, weathered layered outcrops, dry gravel and a distant eroded horizon under a muted dusty peach sky. No plants, cities, open water or people. Believable terrain scale and distant atmospheric haze.\n\nDocumentary photograph taken by a nearby robotic survey camera, ordinary 40mm-equivalent field of view at vehicle-body height. Available sunlight and sky fill, plausible directional shadows, restrained exposure, no studio lighting or theatrical rim light. Granular soil, irregular stones and fine dust in panel recesses, without excessive sharpening. Terrain occupies part of the frame to establish scale. Replace the white reference background entirely with the outdoor environment and relight the vehicle to match, not a pasted studio cutout.",
+  "references": [
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/front-left.png",
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/side.png",
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/rear-right.png"
+  ],
+  "reference_sha256": {
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/front-left.png": "ba52a821d93e249ba46b80e0ee9a639dc7d9b40e9250e3538b3ad9a1710681d6",
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/side.png": "07e3bf134c48c9736c132c1284c7958b5b54310091d324e3a0022340eba34ec0",
+    "mars-ai-stories/stories/vehicle-03-vanguard/references/rear-right.png": "a8c85b0b9daa3f7cc016f315736f125004ddb0652e4bdb5cf475d4afa5142972"
+  },
+  "model_family": "flux",
+  "planet_id": "mars",
+  "mission": {
+    "id": "vanguard-reach",
+    "name": "Far Reach Demonstrator",
+    "origin": "Marvel-inspired fictional advanced-technology expedition",
+    "purpose": "Reach crater terrain inaccessible to wheels using experimental pulse lift.",
+    "arrival": "A robotic carrier releases the probe near a small crater.",
+    "fiction_boundary": "Pulse lift is invented; visible supports, shadows and dust interaction must remain coherent."
+  },
+  "stage": "scene"
+}
