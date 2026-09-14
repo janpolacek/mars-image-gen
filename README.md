@@ -29,6 +29,17 @@ stories/<vehicle>/
 
 Those files are ignored by Git. Review and select generated images yourself before treating any detail as story canon.
 
+## Vehicle dossiers and renders
+
+Each dossier retains the exact identity and scene instructions sent to the
+workflow, followed by links to every generated reference and scene image.
+
+| Vehicle | Dossier | Generated images |
+| --- | --- | --- |
+| ATLAS-01 | [Vehicle dossier](stories/vehicle-01-atlas/README.md) | [References](stories/vehicle-01-atlas/references/) · [Scenes](stories/vehicle-01-atlas/scenes/) |
+| TAIGA-02 | [Vehicle dossier](stories/vehicle-02-taiga/README.md) | [References](stories/vehicle-02-taiga/references/) · [Scenes](stories/vehicle-02-taiga/scenes/) |
+| VANGUARD-03 | [Vehicle dossier](stories/vehicle-03-vanguard/README.md) | [References](stories/vehicle-03-vanguard/references/) · [Scenes](stories/vehicle-03-vanguard/scenes/) |
+
 ## Requirements
 
 - A working ComfyUI installation reachable through its HTTP API.

@@ -10,7 +10,6 @@ __pycache__/
 *.py[cod]
 
 # Generated mission images and ComfyUI execution records stay local.
-stories/
 assets/
 logs/
 tests-output/
@@ -22,3 +21,6 @@ tests-output/
 *.png
 *.jpg
 *.jpeg
+
+# Story dossiers, renders and their ComfyUI run records are project artifacts.
+!stories/**
