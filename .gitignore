@@ -1,21 +1,24 @@
-# Model weights, downloaded runtimes, and credentials never belong in this repository.
+# Generated assets, model files, credentials and local runtime state never belong in this repository.
 *.safetensors
 *.ckpt
 *.pt
 *.pth
 .env
+.env.*
 .DS_Store
 __pycache__/
 *.py[cod]
 
-# Generated mission images remain local for review and can be published separately later.
-references/*.png
-scenes/*.png
-validation/*.png
-stories/**/references/*.png
-stories/**/scenes/*.png
-
-# Local paths and temporary files.
-.comfyui-local/
+# Generated mission images and ComfyUI execution records stay local.
+stories/
+assets/
 logs/
+tests-output/
+*.history.json
+*.inputs.json
+*.job.json
 *.tar
+*.zip
+*.png
+*.jpg
+*.jpeg

@@ -1,19 +1,19 @@
 {
-  "id": "mars-mission-02",
-  "revision": 0,
-  "last_node_id": 32,
-  "last_link_id": 40,
+  "version": 0.4,
+  "last_node_id": 33,
+  "last_link_id": 39,
   "nodes": [
     {
       "id": 1,
       "type": "UNETLoader",
+      "title": "UNETLoader",
       "pos": [
-        -1180,
-        -180
+        0,
+        0
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 0,
@@ -21,7 +21,7 @@
       "inputs": [
         {
           "name": "unet_name",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "unet_name"
           },
@@ -29,7 +29,7 @@
         },
         {
           "name": "weight_dtype",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "weight_dtype"
           },
@@ -41,30 +41,29 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            24
+            29
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "UNETLoader"
       },
       "widgets_values": [
-        "flux-2-klein-4b-fp8.safetensors",
+        "flux-2-klein-base-9b-fp8.safetensors",
         "default"
       ]
     },
     {
       "id": 2,
       "type": "CLIPLoader",
+      "title": "CLIPLoader",
       "pos": [
-        -1180,
-        20
+        0,
+        340
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 1,
@@ -72,7 +71,7 @@
       "inputs": [
         {
           "name": "clip_name",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "clip_name"
           },
@@ -80,7 +79,7 @@
         },
         {
           "name": "type",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "type"
           },
@@ -88,7 +87,7 @@
         },
         {
           "name": "device",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "device"
           },
@@ -100,19 +99,16 @@
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            1,
-            35,
-            36
+            5,
+            7
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "CLIPLoader"
       },
       "widgets_values": [
-        "qwen_3_4b.safetensors",
+        "qwen_3_8b_fp8mixed.safetensors",
         "flux2",
         "cpu"
       ]
@@ -120,13 +116,14 @@
     {
       "id": 3,
       "type": "VAELoader",
+      "title": "VAELoader",
       "pos": [
-        -1180,
-        240
+        0,
+        680
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 2,
@@ -134,7 +131,7 @@
       "inputs": [
         {
           "name": "vae_name",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "vae_name"
           },
@@ -146,16 +143,14 @@
           "name": "VAE",
           "type": "VAE",
           "links": [
-            5,
-            12,
-            19,
-            33
+            10,
+            17,
+            24,
+            38
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "VAELoader"
       },
       "widgets_values": [
@@ -164,23 +159,290 @@
     },
     {
       "id": 4,
-      "type": "CLIPTextEncode",
+      "type": "PrimitiveStringMultiline",
+      "title": "Vehicle description",
       "pos": [
-        -820,
-        -180
+        0,
+        1020
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 3,
       "mode": 0,
       "inputs": [
         {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent."
+      ]
+    },
+    {
+      "id": 5,
+      "type": "PrimitiveStringMultiline",
+      "title": "Scene description",
+      "pos": [
+        0,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "The reference images show the same vehicle on a studio background. Use them for vehicle identity only. Apply the requested action and weathering without redesigning the vehicle.\nFirst morning after landing. Front-left view of the entire ATLAS on a broad rust-coloured plain. A small landing platform and short ramp sit in the middle distance behind it, connected by two bands of fresh wheel tracks. Low sunlight from frame left catches mesh wheel edges and casts a long grounded shadow to the right. Freshly deployed body with only a scattering of grit on lower panels and wheel contact patches. Camera upright, sampling arm folded. Fine foreground pebbles and a low dark ridge on the horizon. Quiet operational survey photograph, not a promotional hero shot."
+      ]
+    },
+    {
+      "id": 6,
+      "type": "PrimitiveStringMultiline",
+      "title": "Shared realism and photography",
+      "pos": [
+        470,
+        0
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nBarren Martian terrain: fine rusty ochre dust, dark basalt fragments, weathered layered outcrops, dry gravel and a distant eroded horizon under a muted dusty peach sky. No plants, cities, open water or people. Believable terrain scale and distant atmospheric haze.\n\nDocumentary photograph taken by a nearby robotic survey camera, ordinary 40mm-equivalent field of view at vehicle-body height. Available sunlight and sky fill, plausible directional shadows, restrained exposure, no studio lighting or theatrical rim light. Granular soil, irregular stones and fine dust in panel recesses, without excessive sharpening. Terrain occupies part of the frame to establish scale. Replace the white reference background entirely with the outdoor environment and relight the vehicle to match, not a pasted studio cutout."
+      ]
+    },
+    {
+      "id": 7,
+      "type": "StringConcatenate",
+      "title": "StringConcatenate",
+      "pos": [
+        470,
+        340
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 1
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 2
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "\n\n"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "StringConcatenate",
+      "title": "StringConcatenate",
+      "pos": [
+        470,
+        680
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 3
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 4
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "\n\n"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "CLIPTextEncode",
+      "title": "CLIPTextEncode",
+      "pos": [
+        470,
+        1020
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
           "name": "clip",
           "type": "CLIP",
-          "link": 1
+          "link": 5
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 10,
+      "type": "CLIPTextEncode",
+      "title": "Empty negative prompt (Base CFG)",
+      "pos": [
+        470,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 7
         },
         {
           "name": "text",
@@ -196,338 +458,38 @@
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
-            37
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "VEHICLE IDENTITY: The three reference images show the same ARES-01 Mars exploration rover from different viewpoints. Create a new photograph featuring this exact rover. Preserve the vehicle identity and engineering design from the references: body geometry, proportions, exactly six wheels with three airless woven metallic-mesh wheels per side, wheel design, rocker-bogie suspension geometry, camera mast, robotic arm, antenna, equipment deck, panel arrangement, materials, colors, and mission markings. Do not merge views or add a second rover."
-      ],
-      "title": "Vehicle identity - keep stable"
-    },
-    {
-      "id": 5,
-      "type": "ConditioningZeroOut",
-      "pos": [
-        -380,
-        80
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            8
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "ConditioningZeroOut"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 6,
-      "type": "LoadImage",
-      "pos": [
-        -1180,
-        520
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "image",
-          "name": "image",
-          "type": "COMBO",
-          "widget": {
-            "name": "image"
-          },
-          "link": null
-        },
-        {
-          "localized_name": "choose file to upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            3
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "ARES01_reference_front_left.png",
-        "image"
-      ],
-      "title": "Reference 1 - front-left"
-    },
-    {
-      "id": 7,
-      "type": "ImageScaleToTotalPixels",
-      "pos": [
-        -860,
-        520
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 3
-        },
-        {
-          "name": "upscale_method",
-          "type": "STRING",
-          "widget": {
-            "name": "upscale_method"
-          },
-          "link": null
-        },
-        {
-          "name": "megapixels",
-          "type": "FLOAT",
-          "widget": {
-            "name": "megapixels"
-          },
-          "link": null
-        },
-        {
-          "name": "resolution_steps",
-          "type": "INT",
-          "widget": {
-            "name": "resolution_steps"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            4
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "ImageScaleToTotalPixels"
-      },
-      "widgets_values": [
-        "lanczos",
-        0.6,
-        1
-      ]
-    },
-    {
-      "id": 8,
-      "type": "VAEEncode",
-      "pos": [
-        -540,
-        520
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "pixels",
-          "type": "IMAGE",
-          "link": 4
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 5
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            7,
-            9
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "VAEEncode"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 9,
-      "type": "ReferenceLatent",
-      "pos": [
-        -220,
-        460
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 6
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "link": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
             13
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "ReferenceLatent"
+        "Node name for S&R": "CLIPTextEncode"
       },
-      "widgets_values": []
-    },
-    {
-      "id": 10,
-      "type": "ReferenceLatent",
-      "pos": [
-        -220,
-        620
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 8
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "link": 9
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            15
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "ReferenceLatent"
-      },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 11,
       "type": "LoadImage",
+      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png",
       "pos": [
-        -1180,
-        860
+        940,
+        0
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 10,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "image",
           "name": "image",
           "type": "COMBO",
           "widget": {
             "name": "image"
-          },
-          "link": null
-        },
-        {
-          "localized_name": "choose file to upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
           },
           "link": null
         }
@@ -537,36 +499,34 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            10
+            8
           ]
         },
         {
           "name": "MASK",
           "type": "MASK",
-          "links": null
+          "links": []
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "ARES01_reference_side.png",
+        "mars-ai-stories/stories/vehicle-01-atlas/references/front-left.png",
         "image"
-      ],
-      "title": "Reference 2 - side"
+      ]
     },
     {
       "id": 12,
       "type": "ImageScaleToTotalPixels",
+      "title": "ImageScaleToTotalPixels",
       "pos": [
-        -860,
-        860
+        940,
+        340
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 11,
@@ -575,11 +535,11 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 10
+          "link": 8
         },
         {
           "name": "upscale_method",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "upscale_method"
           },
@@ -607,13 +567,11 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            11
+            9
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "ImageScaleToTotalPixels"
       },
       "widgets_values": [
@@ -625,13 +583,14 @@
     {
       "id": 13,
       "type": "VAEEncode",
+      "title": "VAEEncode",
       "pos": [
-        -540,
-        860
+        940,
+        680
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 12,
@@ -640,12 +599,12 @@
         {
           "name": "pixels",
           "type": "IMAGE",
-          "link": 11
+          "link": 9
         },
         {
           "name": "vae",
           "type": "VAE",
-          "link": 12
+          "link": 10
         }
       ],
       "outputs": [
@@ -653,14 +612,12 @@
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            14,
-            16
+            12,
+            14
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "VAEEncode"
       },
       "widgets_values": []
@@ -668,16 +625,58 @@
     {
       "id": 14,
       "type": "ReferenceLatent",
+      "title": "ReferenceLatent",
       "pos": [
-        80,
-        460
+        940,
+        1020
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 11
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 15,
+      "type": "ReferenceLatent",
+      "title": "ReferenceLatent",
+      "pos": [
+        940,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -701,50 +700,6 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "ReferenceLatent"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 15,
-      "type": "ReferenceLatent",
-      "pos": [
-        80,
-        620
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 15
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "link": 16
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            22
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "ReferenceLatent"
       },
       "widgets_values": []
@@ -752,33 +707,24 @@
     {
       "id": 16,
       "type": "LoadImage",
+      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/side.png",
       "pos": [
-        -1180,
-        1200
+        1410,
+        0
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 15,
       "mode": 0,
       "inputs": [
         {
-          "localized_name": "image",
           "name": "image",
           "type": "COMBO",
           "widget": {
             "name": "image"
-          },
-          "link": null
-        },
-        {
-          "localized_name": "choose file to upload",
-          "name": "upload",
-          "type": "IMAGEUPLOAD",
-          "widget": {
-            "name": "upload"
           },
           "link": null
         }
@@ -788,36 +734,34 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            17
+            15
           ]
         },
         {
           "name": "MASK",
           "type": "MASK",
-          "links": null
+          "links": []
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "ARES01_reference_rear_right.png",
+        "mars-ai-stories/stories/vehicle-01-atlas/references/side.png",
         "image"
-      ],
-      "title": "Reference 3 - rear-right"
+      ]
     },
     {
       "id": 17,
       "type": "ImageScaleToTotalPixels",
+      "title": "ImageScaleToTotalPixels",
       "pos": [
-        -860,
-        1200
+        1410,
+        340
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 16,
@@ -826,11 +770,11 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 17
+          "link": 15
         },
         {
           "name": "upscale_method",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "upscale_method"
           },
@@ -858,13 +802,11 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            18
+            16
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "ImageScaleToTotalPixels"
       },
       "widgets_values": [
@@ -876,13 +818,14 @@
     {
       "id": 18,
       "type": "VAEEncode",
+      "title": "VAEEncode",
       "pos": [
-        -540,
-        1200
+        1410,
+        680
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 17,
@@ -891,12 +834,12 @@
         {
           "name": "pixels",
           "type": "IMAGE",
-          "link": 18
+          "link": 16
         },
         {
           "name": "vae",
           "type": "VAE",
-          "link": 19
+          "link": 17
         }
       ],
       "outputs": [
@@ -904,14 +847,12 @@
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            21,
-            23
+            19,
+            21
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "VAEEncode"
       },
       "widgets_values": []
@@ -919,16 +860,58 @@
     {
       "id": 19,
       "type": "ReferenceLatent",
+      "title": "ReferenceLatent",
       "pos": [
-        380,
-        460
+        1410,
+        1020
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
       "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 18
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 20,
+      "type": "ReferenceLatent",
+      "title": "ReferenceLatent",
+      "pos": [
+        1410,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -947,41 +930,193 @@
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
-            25
+            27
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "ReferenceLatent"
       },
       "widgets_values": []
     },
     {
-      "id": 20,
-      "type": "ReferenceLatent",
+      "id": 21,
+      "type": "LoadImage",
+      "title": "Reference: mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png",
       "pos": [
-        380,
-        620
+        1880,
+        0
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 19,
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            22
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "mars-ai-stories/stories/vehicle-01-atlas/references/rear-right.png",
+        "image"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "ImageScaleToTotalPixels",
+      "title": "ImageScaleToTotalPixels",
+      "pos": [
+        1880,
+        340
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 22
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscale_method"
+          },
+          "link": null
+        },
+        {
+          "name": "megapixels",
+          "type": "FLOAT",
+          "widget": {
+            "name": "megapixels"
+          },
+          "link": null
+        },
+        {
+          "name": "resolution_steps",
+          "type": "INT",
+          "widget": {
+            "name": "resolution_steps"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "lanczos",
+        0.6,
+        1
+      ]
+    },
+    {
+      "id": 23,
+      "type": "VAEEncode",
+      "title": "VAEEncode",
+      "pos": [
+        1880,
+        680
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 23
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            26,
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 24,
+      "type": "ReferenceLatent",
+      "title": "ReferenceLatent",
+      "pos": [
+        1880,
+        1020
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
           "name": "conditioning",
           "type": "CONDITIONING",
-          "link": 22
+          "link": 25
         },
         {
           "name": "latent",
           "type": "LATENT",
-          "link": 23
+          "link": 26
         }
       ],
       "outputs": [
@@ -989,30 +1124,70 @@
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
-            26
+            30
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "ReferenceLatent"
       },
       "widgets_values": []
     },
     {
-      "id": 21,
-      "type": "EmptyFlux2LatentImage",
+      "id": 25,
+      "type": "ReferenceLatent",
+      "title": "ReferenceLatent",
       "pos": [
-        380,
-        900
+        1880,
+        1360
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 20,
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 27
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 26,
+      "type": "EmptyFlux2LatentImage",
+      "title": "EmptyFlux2LatentImage",
+      "pos": [
+        2350,
+        0
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 25,
       "mode": 0,
       "inputs": [
         {
@@ -1045,34 +1220,33 @@
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            31
+            36
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "EmptyFlux2LatentImage"
       },
       "widgets_values": [
-        896,
-        504,
+        1344,
+        768,
         1
       ]
     },
     {
-      "id": 22,
+      "id": 27,
       "type": "RandomNoise",
+      "title": "RandomNoise",
       "pos": [
-        700,
-        900
+        2350,
+        340
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 21,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -1089,49 +1263,48 @@
           "name": "NOISE",
           "type": "NOISE",
           "links": [
-            27
+            32
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "RandomNoise"
       },
       "widgets_values": [
-        410201,
+        410101,
         "fixed"
       ]
     },
     {
-      "id": 23,
+      "id": 28,
       "type": "CFGGuider",
+      "title": "CFGGuider",
       "pos": [
-        700,
-        460
+        2350,
+        680
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 22,
+      "order": 27,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": 24
+          "link": 29
         },
         {
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 25
+          "link": 30
         },
         {
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 26
+          "link": 31
         },
         {
           "name": "cfg",
@@ -1147,37 +1320,36 @@
           "name": "GUIDER",
           "type": "GUIDER",
           "links": [
-            28
+            33
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "CFGGuider"
       },
       "widgets_values": [
-        1.0
+        5.0
       ]
     },
     {
-      "id": 24,
+      "id": 29,
       "type": "KSamplerSelect",
+      "title": "KSamplerSelect",
       "pos": [
-        700,
-        1080
+        2350,
+        1020
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 23,
+      "order": 28,
       "mode": 0,
       "inputs": [
         {
           "name": "sampler_name",
-          "type": "STRING",
+          "type": "COMBO",
           "widget": {
             "name": "sampler_name"
           },
@@ -1189,13 +1361,11 @@
           "name": "SAMPLER",
           "type": "SAMPLER",
           "links": [
-            29
+            34
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "KSamplerSelect"
       },
       "widgets_values": [
@@ -1203,18 +1373,19 @@
       ]
     },
     {
-      "id": 25,
+      "id": 30,
       "type": "Flux2Scheduler",
+      "title": "Flux2Scheduler",
       "pos": [
-        700,
-        1240
+        2350,
+        1360
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 24,
+      "order": 29,
       "mode": 0,
       "inputs": [
         {
@@ -1247,60 +1418,59 @@
           "name": "SIGMAS",
           "type": "SIGMAS",
           "links": [
-            30
+            35
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "Flux2Scheduler"
       },
       "widgets_values": [
-        4,
-        896,
-        504
+        20,
+        1344,
+        768
       ]
     },
     {
-      "id": 26,
+      "id": 31,
       "type": "SamplerCustomAdvanced",
+      "title": "SamplerCustomAdvanced",
       "pos": [
-        1020,
-        650
+        2820,
+        0
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 25,
+      "order": 30,
       "mode": 0,
       "inputs": [
         {
           "name": "noise",
           "type": "NOISE",
-          "link": 27
+          "link": 32
         },
         {
           "name": "guider",
           "type": "GUIDER",
-          "link": 28
+          "link": 33
         },
         {
           "name": "sampler",
           "type": "SAMPLER",
-          "link": 29
+          "link": 34
         },
         {
           "name": "sigmas",
           "type": "SIGMAS",
-          "link": 30
+          "link": 35
         },
         {
           "name": "latent_image",
           "type": "LATENT",
-          "link": 31
+          "link": 36
         }
       ],
       "outputs": [
@@ -1308,46 +1478,45 @@
           "name": "output",
           "type": "LATENT",
           "links": [
-            32
+            37
           ]
         },
         {
           "name": "denoised_output",
           "type": "LATENT",
-          "links": null
+          "links": []
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "SamplerCustomAdvanced"
       },
       "widgets_values": []
     },
     {
-      "id": 27,
+      "id": 32,
       "type": "VAEDecode",
+      "title": "VAEDecode",
       "pos": [
-        1340,
-        650
+        2820,
+        340
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 26,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
           "name": "samples",
           "type": "LATENT",
-          "link": 32
+          "link": 37
         },
         {
           "name": "vae",
           "type": "VAE",
-          "link": 33
+          "link": 38
         }
       ],
       "outputs": [
@@ -1355,36 +1524,35 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            34
+            39
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "VAEDecode"
       },
       "widgets_values": []
     },
     {
-      "id": 28,
+      "id": 33,
       "type": "SaveImage",
+      "title": "SaveImage",
       "pos": [
-        1660,
-        650
+        2820,
+        680
       ],
       "size": [
-        300,
-        150
+        420,
+        300
       ],
       "flags": {},
-      "order": 27,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 34
+          "link": 39
         },
         {
           "name": "filename_prefix",
@@ -1399,275 +1567,76 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "links": null
+          "links": []
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
         "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "mars-ai-stories/scenes/ARES01_scene_ridge_test"
+        "mars-ai-stories/manual/02-scene"
       ]
-    },
-    {
-      "id": 29,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -820,
-        80
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 35
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            38
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "SCENE DESCRIPTION: ARES-01 has reached the top of a rocky Martian ridge after a long ascent. The rover is near the crest overlooking an enormous ancient crater basin below. Wheel tracks lead up the slope behind it. Layered mountains and eroded terrain extend toward the horizon. The scene communicates exploration, isolation, and enormous scale. Scientifically plausible wide composition."
-      ],
-      "title": "EDIT SCENE DESCRIPTION"
-    },
-    {
-      "id": 30,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -820,
-        340
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 29,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 36
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            40
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "PHOTO STYLE: Photorealistic planetary expedition photography. Authentic NASA/JPL-style mission documentation with subtle cinematic documentary composition. Natural Martian illumination, physically plausible shadows, restrained colors, fine atmospheric dust, realistic optics and exposure, subtle sensor texture, realistic Mars geology. The result should look like a remarkable real photograph transmitted from an actual Mars mission. No illustration, concept art, fantasy technology, or video-game-render appearance."
-      ],
-      "title": "Photo style - keep stable"
-    },
-    {
-      "id": 31,
-      "type": "ConditioningCombine",
-      "pos": [
-        -380,
-        -80
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 30,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning_1",
-          "type": "CONDITIONING",
-          "link": 37
-        },
-        {
-          "name": "conditioning_2",
-          "type": "CONDITIONING",
-          "link": 38
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            39
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "ConditioningCombine"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 32,
-      "type": "ConditioningCombine",
-      "pos": [
-        -80,
-        80
-      ],
-      "size": [
-        300,
-        150
-      ],
-      "flags": {},
-      "order": 31,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning_1",
-          "type": "CONDITIONING",
-          "link": 39
-        },
-        {
-          "name": "conditioning_2",
-          "type": "CONDITIONING",
-          "link": 40
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            2,
-            6
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "ConditioningCombine"
-      },
-      "widgets_values": []
     }
   ],
   "links": [
     [
       1,
+      5,
+      0,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      4,
+      0,
+      7,
+      1,
+      "STRING"
+    ],
+    [
+      3,
+      7,
+      0,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      6,
+      0,
+      8,
+      1,
+      "STRING"
+    ],
+    [
+      5,
       2,
       0,
-      4,
+      9,
       0,
       "CLIP"
     ],
     [
+      6,
+      8,
+      0,
+      9,
+      1,
+      "STRING"
+    ],
+    [
+      7,
       2,
-      32,
-      0,
-      5,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      3,
-      6,
-      0,
-      7,
-      0,
-      "IMAGE"
-    ],
-    [
-      4,
-      7,
-      0,
-      8,
-      0,
-      "IMAGE"
-    ],
-    [
-      5,
-      3,
-      0,
-      8,
-      1,
-      "VAE"
-    ],
-    [
-      6,
-      32,
-      0,
-      9,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      7,
-      8,
-      0,
-      9,
-      1,
-      "LATENT"
-    ],
-    [
-      8,
-      5,
       0,
       10,
       0,
-      "CONDITIONING"
+      "CLIP"
     ],
     [
-      9,
       8,
-      0,
-      10,
-      1,
-      "LATENT"
-    ],
-    [
-      10,
       11,
       0,
       12,
@@ -1675,7 +1644,7 @@
       "IMAGE"
     ],
     [
-      11,
+      9,
       12,
       0,
       13,
@@ -1683,7 +1652,7 @@
       "IMAGE"
     ],
     [
-      12,
+      10,
       3,
       0,
       13,
@@ -1691,7 +1660,7 @@
       "VAE"
     ],
     [
-      13,
+      11,
       9,
       0,
       14,
@@ -1699,7 +1668,7 @@
       "CONDITIONING"
     ],
     [
-      14,
+      12,
       13,
       0,
       14,
@@ -1707,7 +1676,7 @@
       "LATENT"
     ],
     [
-      15,
+      13,
       10,
       0,
       15,
@@ -1715,7 +1684,7 @@
       "CONDITIONING"
     ],
     [
-      16,
+      14,
       13,
       0,
       15,
@@ -1723,7 +1692,7 @@
       "LATENT"
     ],
     [
-      17,
+      15,
       16,
       0,
       17,
@@ -1731,26 +1700,42 @@
       "IMAGE"
     ],
     [
-      18,
+      16,
       17,
       0,
       18,
       0,
       "IMAGE"
+    ],
+    [
+      17,
+      3,
+      0,
+      18,
+      1,
+      "VAE"
+    ],
+    [
+      18,
+      14,
+      0,
+      19,
+      0,
+      "CONDITIONING"
     ],
     [
       19,
-      3,
-      0,
       18,
+      0,
+      19,
       1,
-      "VAE"
+      "LATENT"
     ],
     [
       20,
-      14,
+      15,
       0,
-      19,
+      20,
       0,
       "CONDITIONING"
     ],
@@ -1758,195 +1743,156 @@
       21,
       18,
       0,
-      19,
+      20,
       1,
       "LATENT"
     ],
     [
       22,
-      15,
+      21,
       0,
-      20,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      22,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      3,
+      0,
+      23,
+      1,
+      "VAE"
+    ],
+    [
+      25,
+      19,
+      0,
+      24,
       0,
       "CONDITIONING"
     ],
     [
+      26,
       23,
-      18,
       0,
-      20,
+      24,
       1,
       "LATENT"
     ],
     [
-      24,
+      27,
+      20,
+      0,
+      25,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      28,
+      23,
+      0,
+      25,
+      1,
+      "LATENT"
+    ],
+    [
+      29,
       1,
       0,
-      23,
+      28,
       0,
       "MODEL"
     ],
     [
-      25,
-      19,
+      30,
+      24,
       0,
-      23,
+      28,
       1,
       "CONDITIONING"
     ],
     [
-      26,
-      20,
+      31,
+      25,
       0,
-      23,
+      28,
       2,
       "CONDITIONING"
     ],
     [
+      32,
       27,
-      22,
       0,
-      26,
+      31,
       0,
       "NOISE"
     ],
     [
+      33,
       28,
-      23,
       0,
-      26,
+      31,
       1,
       "GUIDER"
     ],
     [
+      34,
       29,
-      24,
       0,
-      26,
+      31,
       2,
       "SAMPLER"
     ],
     [
+      35,
       30,
-      25,
       0,
-      26,
+      31,
       3,
       "SIGMAS"
     ],
     [
-      31,
-      21,
-      0,
+      36,
       26,
+      0,
+      31,
       4,
       "LATENT"
     ],
     [
-      32,
-      26,
+      37,
+      31,
       0,
-      27,
+      32,
       0,
       "LATENT"
     ],
     [
-      33,
+      38,
       3,
       0,
-      27,
+      32,
       1,
       "VAE"
     ],
     [
-      34,
-      27,
+      39,
+      32,
       0,
-      28,
+      33,
       0,
       "IMAGE"
-    ],
-    [
-      35,
-      2,
-      0,
-      29,
-      0,
-      "CLIP"
-    ],
-    [
-      36,
-      2,
-      0,
-      30,
-      0,
-      "CLIP"
-    ],
-    [
-      37,
-      4,
-      0,
-      31,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      38,
-      29,
-      0,
-      31,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      39,
-      31,
-      0,
-      32,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      40,
-      30,
-      0,
-      32,
-      1,
-      "CONDITIONING"
     ]
   ],
-  "groups": [
-    {
-      "id": 1,
-      "title": "Three canonical references - all define ARES-01",
-      "bounding": [
-        -1220,
-        470,
-        1360,
-        910
-      ],
-      "color": "#3f789e",
-      "font_size": 22,
-      "flags": {}
-    },
-    {
-      "id": 2,
-      "title": "Scenario prompt - edit SCENARIO only",
-      "bounding": [
-        -850,
-        -230,
-        780,
-        500
-      ],
-      "color": "#b58b2a",
-      "font_size": 22,
-      "flags": {}
-    }
-  ],
+  "groups": [],
   "config": {},
-  "extra": {
-    "frontendVersion": "1.52.7",
-    "workflowRendererVersion": "LG"
-  },
-  "version": 0.4
+  "extra": {}
 }

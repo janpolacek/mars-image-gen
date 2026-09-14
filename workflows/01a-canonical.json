@@ -1,0 +1,1022 @@
+{
+  "version": 0.4,
+  "last_node_id": 18,
+  "last_link_id": 18,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "title": "UNETLoader",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux-2-klein-base-9b-fp8.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "title": "CLIPLoader",
+      "pos": [
+        0,
+        340
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            5,
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen_3_8b_fp8mixed.safetensors",
+        "flux2",
+        "cpu"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "title": "VAELoader",
+      "pos": [
+        0,
+        680
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "PrimitiveStringMultiline",
+      "title": "Vehicle description",
+      "pos": [
+        0,
+        1020
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "ATLAS-01: roughly two-metre-long unmanned American aerospace-inspired Mars rover. Low rectangular warm-white equipment body, navy-blue inset side panels, flat charcoal deck. Six broad open-metal-mesh wheels, three per side, connect visibly to the chassis through dark articulated suspension and clear hubs. One short central mast carries a compact horizontal pair of camera lenses. One short two-joint sampling arm mounts at the FRONT centre of the chassis, ending in a small cylindrical contact tool; it folds against the front for travel. The rear is a plain sealed service panel. Matte ceramic-painted panels, brushed metal arm sections, dark protected pivots, a few recessed bolts. No loose cables, decorative fins or passenger compartment. Keep wheel, axle and suspension orientations mechanically coherent."
+      ]
+    },
+    {
+      "id": 5,
+      "type": "PrimitiveStringMultiline",
+      "title": "Camera / reference instructions",
+      "pos": [
+        0,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Front-left three-quarter view at body height. Entire vehicle visible, front sampling tool on the near side, rear extending away. Arm folded into its travel cradle, propulsion hardware readable. Canonical baseline design."
+      ]
+    },
+    {
+      "id": 6,
+      "type": "PrimitiveStringMultiline",
+      "title": "Shared realism and photography",
+      "pos": [
+        470,
+        0
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Photograph of a tangible full-size robotic vehicle, not a miniature. Restrained saturation, natural tonal transitions, fine material texture. Matte painted panels, subdued brushed-metal reflections, small dark sensor lenses. A few recessed fasteners, narrow panel seams and protected pivots at plausible scale. Every instrument is securely mounted; each arm has one continuous chain of connected joints. Suspension and propulsion have clearance to move. Sealed opaque equipment housings, no cabin or passenger windows. Preserve silhouette, equipment placement and propulsion type. No glossy toy finish, theatrical bloom, captions or graphic overlays.\n\nEngineering reference photograph on a seamless neutral WHITE floor and WHITE background. Soft broad light from above-left, gentle fill, faint contact shadow. Expose white body panels slightly darker than the backdrop so edges remain visible. Entire vehicle with clear margin, sharp focus across the body, moderate perspective like a 70mm lens. Clean baseline manufactured surfaces with subtle machining marks. No scenery, rocks, red dust, display pedestal or green reflections."
+      ]
+    },
+    {
+      "id": 7,
+      "type": "StringConcatenate",
+      "title": "StringConcatenate",
+      "pos": [
+        470,
+        340
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 1
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 2
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "\n\n"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "StringConcatenate",
+      "title": "StringConcatenate",
+      "pos": [
+        470,
+        680
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 3
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 4
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "\n\n"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "CLIPTextEncode",
+      "title": "CLIPTextEncode",
+      "pos": [
+        470,
+        1020
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 10,
+      "type": "CLIPTextEncode",
+      "title": "Empty negative prompt (Base CFG)",
+      "pos": [
+        470,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 7
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 11,
+      "type": "EmptyFlux2LatentImage",
+      "title": "EmptyFlux2LatentImage",
+      "pos": [
+        940,
+        0
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage"
+      },
+      "widgets_values": [
+        1152,
+        864,
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "type": "RandomNoise",
+      "title": "RandomNoise",
+      "pos": [
+        940,
+        340
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        410101,
+        "fixed"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CFGGuider",
+      "title": "CFGGuider",
+      "pos": [
+        940,
+        680
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 8
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 9
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 10
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CFGGuider"
+      },
+      "widgets_values": [
+        5.0
+      ]
+    },
+    {
+      "id": 14,
+      "type": "KSamplerSelect",
+      "title": "KSamplerSelect",
+      "pos": [
+        940,
+        1020
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "Flux2Scheduler",
+      "title": "Flux2Scheduler",
+      "pos": [
+        940,
+        1360
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Flux2Scheduler"
+      },
+      "widgets_values": [
+        20,
+        1152,
+        864
+      ]
+    },
+    {
+      "id": 16,
+      "type": "SamplerCustomAdvanced",
+      "title": "SamplerCustomAdvanced",
+      "pos": [
+        1410,
+        0
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 11
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 12
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 13
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 14
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            16
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "VAEDecode",
+      "title": "VAEDecode",
+      "pos": [
+        1410,
+        340
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 16
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 18,
+      "type": "SaveImage",
+      "title": "SaveImage",
+      "pos": [
+        1410,
+        680
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "mars-ai-stories/manual/01a-canonical"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      5,
+      0,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      4,
+      0,
+      7,
+      1,
+      "STRING"
+    ],
+    [
+      3,
+      7,
+      0,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      6,
+      0,
+      8,
+      1,
+      "STRING"
+    ],
+    [
+      5,
+      2,
+      0,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      8,
+      0,
+      9,
+      1,
+      "STRING"
+    ],
+    [
+      7,
+      2,
+      0,
+      10,
+      0,
+      "CLIP"
+    ],
+    [
+      8,
+      1,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      9,
+      9,
+      0,
+      13,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      10,
+      10,
+      0,
+      13,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      11,
+      12,
+      0,
+      16,
+      0,
+      "NOISE"
+    ],
+    [
+      12,
+      13,
+      0,
+      16,
+      1,
+      "GUIDER"
+    ],
+    [
+      13,
+      14,
+      0,
+      16,
+      2,
+      "SAMPLER"
+    ],
+    [
+      14,
+      15,
+      0,
+      16,
+      3,
+      "SIGMAS"
+    ],
+    [
+      15,
+      11,
+      0,
+      16,
+      4,
+      "LATENT"
+    ],
+    [
+      16,
+      16,
+      0,
+      17,
+      0,
+      "LATENT"
+    ],
+    [
+      17,
+      3,
+      0,
+      17,
+      1,
+      "VAE"
+    ],
+    [
+      18,
+      17,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {}
+}
